@@ -2,6 +2,7 @@ body {
     background-color: #f2d18a;
 	margin: 0;
 	text-align: center;
+	width: 100%;
 }
 
 h1 {
@@ -51,7 +52,7 @@ ul {
     padding: 20px;
     width: 175px;
 	text-align: right;
-	position: fixed;
+	position: absolute;
 }
 
 nav li {
