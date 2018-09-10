@@ -47,7 +47,7 @@ a:hover {
 	background-color: #000000
 }
 
-ul {
+nav ul {
 	background-color: #ffffff;
 	list-style-type: none;
     padding: 20px;
@@ -61,7 +61,7 @@ nav li {
 }
 
 li {
-	text-align: center;
+	text-align: left;
 }
 
 footer {
