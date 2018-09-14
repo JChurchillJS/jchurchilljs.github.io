@@ -1,24 +1,29 @@
 body {
     background-color: #f2d18a;
 	margin: 0;
-	text-align: center;
 	width: 100%;
 }
 
 h1 {
-    color: #000000;
+	color: #000000;
     text-align: center;
-	font-size: 70px;
-	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 80px;
+	font: 400 130px/0.8 'Cookie', Helvetica, sans-serif;
+	margin-top: 10px;
+	margin-bottom: 0;
 	letter-spacing: 3px;
-	text-shadow: 3px 2px #ffffff;
+	text-shadow: 3px 2px #979899;
 }
 
 h2 {
-	color: #000000;
+    color: #000000;
     text-align: center;
-	font-size: 40px;
-	font-family: verdana;
+	font-size: 80px;
+	font: 400 130px/0.8 'Cookie', Helvetica, sans-serif;
+	margin-top: 10px;
+	margin-bottom: 0;
+	letter-spacing: 3px;
+	text-shadow: 3px 2px #979899;
 }
 
 h3 {
@@ -26,12 +31,12 @@ h3 {
     text-align: center;
 	font-size: 25px;
 	font-family: verdana;
+	margin-bottom: 0;
 }
 
 p {
 	color: #000000;
 	font-size: 15px;
-	text-align: center;
 	font-family: verdana;
 }
 
@@ -47,6 +52,15 @@ a:hover {
 	background-color: #000000
 }
 
+#main {
+	background-color: #ffffff;
+	width: 50%;
+	height: 100%;
+	margin-left: 25%;
+	margin-top: -3px;
+	display:inline-block;
+}
+
 nav ul {
 	background-color: #ffffff;
 	list-style-type: none;
@@ -59,6 +73,7 @@ nav ul {
 nav li {
 	text-align: right;
 }
+
 
 li {
 	text-align: left;
@@ -93,5 +108,5 @@ th, td {
 	display: block;
     margin-left: auto;
     margin-right: auto;
-	width: 60%;
+	width: 75%;
 }
