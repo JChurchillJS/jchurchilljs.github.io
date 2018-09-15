@@ -4,7 +4,7 @@
 		<!--
 			CIS166AA: Mexico
 			Author: Jessica Churchill
-			Date: 09/10/2018
+			Date: 09/15/2018
 		-->
 		
 		<meta charset="utf-8" />
@@ -12,9 +12,13 @@
 		<link rel="stylesheet" href="style.css" />
 		<!-- Script for older browsers -->
 		<script src="modernizr.custom.05819.js"></script>
+		<!-- Increase ingredient amounts when serving size is increased  -->
+		<script src="JavaScript/ServingSize.js"></script>
 	</head>
-	<body>
-		<img src="banner.png" style="width:100%; height:250px" alt="Sweets top banner">
+	
+		<body>
+		<img src="Images/banner.png" style="width:100%; height:13vw; box-shadow: 0 0 6px #000000" alt="Sweets Top Banner">
+		
 		<nav>
 			<ul>
 				<li><a href="index.html">Home</a></li>
@@ -25,40 +29,48 @@
 				<li><a href="mexico.html">Mexico</a></li>
 			</ul>
 		</nav>
-		<header>
-			<h1>Flan</h1>
-		</header>
-		<img src="flan.jpg" style="width:25%; height:25%; border:1px solid black" class="center" alt="Flan">
-		<h3>History</h3>
-		<p class="wrap">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac odio tempor orci dapibus ultrices in iaculis. Mi quis hendrerit dolor magna eget est lorem. Quam viverra orci sagittis eu volutpat odio. Consectetur lorem donec massa sapien faucibus. Ut pharetra sit amet aliquam id diam.
-		Consequat mauris nunc congue nisi vitae suscipit tellus. Dolor sed viverra ipsum nunc aliquet. Aliquet enim tortor at auctor urna nunc id cursus metus. In ornare quam viverra orci sagittis eu volutpat. Nibh tortor id aliquet lectus. Libero nunc consequat interdum varius sit amet mattis vulputate. Euismod nisi porta lorem mollis aliquam ut porttitor leo.
-		Dolor purus non enim praesent elementum facilisis leo. Cursus in hac habitasse platea dictumst quisque sagittis purus. Augue neque gravida in fermentum et.</p><br>
 		
-		<h3>Recipe</h3>
-		<table style="width:500px" class="center">
-			<tr>
-				<td>
-				<p><u>Ingredients</u></p>
-				<ul>
-					<li>1 (16 oz) package phyllo dough</li>
-					<li>1 lb chopped nuts</li>
-					<li>1 c butter</li>
-					<li>1 tsp ground cinnamon</li>
-					<li>1 c water</li>
-					<li>1 c sugar</li>
-					<li>1 tsp vanilla extract</li>
-					<li>1/2 c honey</li>
-				</ul>
-				<p><u>Directions</u><br>
-				Preheat oven to 350 degrees F(175 degrees C). Butter the bottoms and sides of a 9x13 inch pan.
-				Chop nuts and toss with cinnamon. Set aside. Unroll phyllo dough. Cut whole stack in half to fit pan. Cover phyllo with a dampened cloth to keep from drying out as you work.
-				Place two sheets of dough in pan, butter thoroughly. Repeat until you have 8 sheets layered. Sprinkle 2 - 3 tablespoons of nut mixture on top. Top with two sheets of dough, butter, nuts, layering as you go. The top layer should be about 6 - 8 sheets deep.
-				Using a sharp knife cut into diamond or square shapes all the way to the bottom of the pan. You may cut into 4 long rows the make diagonal cuts. Bake for about 50 minutes until baklava is golden and crisp.
-				Make sauce while baklava is baking. Boil sugar and water until sugar is melted. Add vanilla and honey. Simmer for about 20 minutes.
-				Remove baklava from oven and immediately spoon sauce over it. Let cool. Serve in cupcake papers. This freezes well. Leave it uncovered as it gets soggy if it is wrapped up.</p>
-				</td>
-			</tr>
-		</table><br><br>
+		<div id="main">	
+			<h1>Flan</h1>
+			<p class="wrap">
+				Flan is found in recipes as far back as ancient Rome. It was during Roman times that domesticated chickens were first kept for laying eggs. The Romans, with eggs in surplus, and consulting the 
+				Greek's knowledge of the art of cooking, developed new recipes, one of which turned out to be a custardly concoction known as flan. It was orignally a savory dish (not sweet, but aromatic and pleasing 
+				to the palate). The Romans concocted many dishes that we might find interesting, such as eel flan. They also had a very nice sweet flan that was flavored with honey.
+				<a href="http://flan.holidaycook.com/history.shtml">(Source)</a>
+			</p><br>
+			
+			<table style="width:75%" class="center">
+				<tr>
+					<td>
+					<img src="Images/flan.jpg" style="width:22vw; height:12.5vw; border:1px solid black" class="center" alt="Flan">
+					<h3><a href="https://www.geniuskitchen.com/recipe/mexican-flan-baked-caramel-custard-12354">Mexican Flan (Baked Caramel Custard)</a></h3>
+					<p>Servings: <input type="text" id="servings" size="1" value="10" onchange="increaseFlan()"></p>
+					<p><u>Ingredients</u></p>
+					<ul>
+						<li><span id="sugar">1</span> sugar</li>
+						<li><span id="eggs">6</span> eggs</li>
+						<li><span id="milk">3</span> c milk</li>
+						<li><span id="vanilla">1.5</span> tsp vanilla</li>
+						<li><span id="orange">1</span> tsp orange peel, grated</li>
+						<li>Sliced fruit</li>
+					</ul>
+					<p><u>Directions</u><br>
+						1. Heat 1/2 cup sugar in a heavy skillet or saucepan, stirring constantly until it melts and turns a dark golden color.<br>
+						2. Remove from heat and immediately pour into a 4 1/2 cup metal ring mold.  Swish it around so it evenly coats the bottom of the ring mold.<br>
+						3. In a large mixing bowl, lightly beat the eggs.<br>
+						4. Stir in milk, 1/2 cup sugar, vanilla and orange peel.<br>
+						5. Place caramel coated ring mold in another pan and place on an oven rack.<br>
+						6. Pour egg mixture into the ring mold and pour the hottest tap water possible around the ring mold to a depth of 1 inch.<br>
+						7. Bake at 325°F for close to l hour or until a knife comes out clean.<br>
+						8. Cool flan on a wire rack.  Chill for at least 3 1/2 hours.<br>
+						9. To unmold the flan, loosen the edges with a spatula.  Slip the spatula down the sides to let air in.<br>
+						10. Place the serving platter over the mold and flip to allow the flan to slip onto the platter.
+						11. Spoon the caramel that may remain in the mold on top of the flan.<br>
+						12. Pile sliced fruit in the center and serve.<br></p>
+					</td>
+				</tr>
+			</table><br><br>
+		</div>
 		
 		<footer>
 			&copy;2018 Jessica Churchill

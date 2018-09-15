@@ -4,7 +4,7 @@
 		<!--
 			CIS166AA: Japan
 			Author: Jessica Churchill
-			Date: 09/10/2018
+			Date: 09/15/2018
 		-->
 		
 		<meta charset="utf-8" />
@@ -12,9 +12,13 @@
 		<link rel="stylesheet" href="style.css" />
 		<!-- Script for older browsers -->
 		<script src="modernizr.custom.05819.js"></script>
+		<!-- Increase ingredient amounts when serving size is increased  -->
+		<script src="JavaScript/ServingSize.js"></script>
 	</head>
+	
 	<body>
-		<img src="banner.png" style="width:100%; height:250px" alt="Sweets top banner">
+		<img src="Images/banner.png" style="width:100%; height:13vw; box-shadow: 0 0 6px #000000" alt="Sweets Top Banner">
+		
 		<nav>
 			<ul>
 				<li><a href="index.html">Home</a></li>
@@ -25,40 +29,55 @@
 				<li><a href="mexico.html">Mexico</a></li>
 			</ul>
 		</nav>
-		<header>
-			<h1>Daifuku Mochi</h1>
-		</header>
-		<img src="daifuku.jpg" style="width:25%; height:25%; border:1px solid black" class="center" alt="Daifuku Mochi">
-		<h3>History</h3>
-		<p class="wrap">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac odio tempor orci dapibus ultrices in iaculis. Mi quis hendrerit dolor magna eget est lorem. Quam viverra orci sagittis eu volutpat odio. Consectetur lorem donec massa sapien faucibus. Ut pharetra sit amet aliquam id diam.
-		Consequat mauris nunc congue nisi vitae suscipit tellus. Dolor sed viverra ipsum nunc aliquet. Aliquet enim tortor at auctor urna nunc id cursus metus. In ornare quam viverra orci sagittis eu volutpat. Nibh tortor id aliquet lectus. Libero nunc consequat interdum varius sit amet mattis vulputate. Euismod nisi porta lorem mollis aliquam ut porttitor leo.
-		Dolor purus non enim praesent elementum facilisis leo. Cursus in hac habitasse platea dictumst quisque sagittis purus. Augue neque gravida in fermentum et.</p><br>
 		
-		<h3>Recipe</h3>
-		<table style="width:500px" class="center">
-			<tr>
-				<td>
-				<p><u>Ingredients</u></p>
-				<ul>
-					<li>1 (16 oz) package phyllo dough</li>
-					<li>1 lb chopped nuts</li>
-					<li>1 c butter</li>
-					<li>1 tsp ground cinnamon</li>
-					<li>1 c water</li>
-					<li>1 c sugar</li>
-					<li>1 tsp vanilla extract</li>
-					<li>1/2 c honey</li>
-				</ul>
-				<p><u>Directions</u><br>
-				Preheat oven to 350 degrees F(175 degrees C). Butter the bottoms and sides of a 9x13 inch pan.
-				Chop nuts and toss with cinnamon. Set aside. Unroll phyllo dough. Cut whole stack in half to fit pan. Cover phyllo with a dampened cloth to keep from drying out as you work.
-				Place two sheets of dough in pan, butter thoroughly. Repeat until you have 8 sheets layered. Sprinkle 2 - 3 tablespoons of nut mixture on top. Top with two sheets of dough, butter, nuts, layering as you go. The top layer should be about 6 - 8 sheets deep.
-				Using a sharp knife cut into diamond or square shapes all the way to the bottom of the pan. You may cut into 4 long rows the make diagonal cuts. Bake for about 50 minutes until baklava is golden and crisp.
-				Make sauce while baklava is baking. Boil sugar and water until sugar is melted. Add vanilla and honey. Simmer for about 20 minutes.
-				Remove baklava from oven and immediately spoon sauce over it. Let cool. Serve in cupcake papers. This freezes well. Leave it uncovered as it gets soggy if it is wrapped up.</p>
-				</td>
-			</tr>
-		</table><br><br>
+		<div id="main">	
+			<h1>Daifuku Mochi</h1>
+			<p class="wrap">
+				Daifuku is one of Japan’s most popular confectionary varieties, and is enjoyed by people of all ages throughout the seasons. Its origins can be traced back to the early edo period and the famously 
+				filling harabuto-mochi, which was slightly larger in size than the daifuku we know today. The name ‘harabuto’ roughly translates to ‘fat belly’, and reflects the way in which it kept people full for a 
+				long time after eating – a characteristic still shared by modern daifuku. The main ingredients of daifuku are rice, azuki beans and sugar.
+				<a href="http://www.zoomjapan.info/2017/07/17/history-of-daifuku/">(Source)</a>
+			</p><br>
+			
+			<table style="width:75%" class="center">
+				<tr>
+					<td>
+					<img src="Images/daifuku.jpg" style="width:22vw; height:15.5vw; border:1px solid black" class="center" alt="Tiramisu">
+					<h3><a href="http://www.japanesecooking101.com/daifuku-mochi-recipe/">Daifuku Mochi</a></h3>
+					<p>Servings: <input type="text" id="servings" size="1" value="8" onchange="increaseDaifuku()"></p>
+					<p><u>Ingredients</u></p>
+					<ul>
+						<li><span id="flour">1</span> c Mochiko (sweet rice flour)</li>
+						<li><span id="water">0.75</span> c water</li>
+						<li><span id="sugar">0.75</span> c sugar</li>
+						<li>Katakuriko (potato starch) or cornstarch</li>
+						<li><span id="paste">0.5</span> Anko recipe</li>
+					</ul>
+						<p><u>Anko (Sweet Red Bean Paste) Recipe</u></p>
+					<ul>
+						<li><span id="beans">1</span> c red beans</li>
+						<li><span id="ankoSugar">1.5</span> c sugar</li>
+						<li>water</li>
+					</ul>
+					<p><u>Directions</u><br>
+						1. Mix Mochiko and water in a glass (or other heat proof) bowl and mix well.<br>
+						2. Add some more water if it's too dry, 1 Tbsp at a time.<br>
+						3. Steam the Mochiko dough (leaving the dough in the bowl) in a steamer for 20 minutes.<br>
+						4. Transfer the steamed Mochi into a pot and cook at medium to medium low heat with 1/3 of the sugar (1/4 cup). When the sugar is completely dissolved, add another 1/3 of the sugar and mix well. 
+						Add the last part of the sugar and cook some more until the sugar is dissolved. Take the time to melt the sugar, but be careful not to burn it.<br>
+						5. Take the hot Mochi out from the pot onto a sheet pan liberally dusted with Katakuriko or cornstarch.<br>
+						6. Cut some Mochi out, and wrap the Mochi around a ball of Anko (size of a heaping tablespoon). Pinch the end of Mochi to seal. Serve it with the seam side down.<br>
+						
+						<br><u>Anko Directions</u><br>
+						1. Put red beans in a pot with 4-5 cups of water. Let boil for 5 minutes and discard water.<br>
+						2. In a clean pot, place red beans and 4-5 cups of water, cover, and let it simmer at low heat for 1 1/2 to 2 hours (add more water to keep above the beans). The beans should now be very soft, 
+						easily crushed between fingers.<br>
+						3. Discard water again, put soft beans back in the pot with sugar at medium high heat and constantly stir and mix about 10 minutes until forming a paste that looks shiny but still loose.
+						Immediately transfer the paste to a container.
+					</td>
+				</tr>
+			</table><br><br>
+		</div>
 		
 		<footer>
 			&copy;2018 Jessica Churchill

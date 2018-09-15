@@ -4,7 +4,7 @@
 		<!--
 			CIS166AA: Australia
 			Author: Jessica Churchill
-			Date: 09/10/2018
+			Date: 09/15/2018
 		-->
 		
 		<meta charset="utf-8" />
@@ -12,9 +12,13 @@
 		<link rel="stylesheet" href="style.css" />
 		<!-- Script for older browsers -->
 		<script src="modernizr.custom.05819.js"></script>
+		<!-- Increase ingredient amounts when serving size is increased  -->
+		<script src="JavaScript/ServingSize.js"></script>
 	</head>
+	
 	<body>
-		<img src="banner.png" style="width:100%; height:250px" alt="Sweets top banner">
+		<img src="Images/banner.png" style="width:100%; height:13vw; box-shadow: 0 0 6px #000000" alt="Sweets Top Banner">
+		
 		<nav>
 			<ul>
 				<li><a href="index.html">Home</a></li>
@@ -25,40 +29,56 @@
 				<li><a href="mexico.html">Mexico</a></li>
 			</ul>
 		</nav>
-		<header>
-			<h1>Pavlova</h1>
-		</header>
-		<img src="pavlova.jpg" style="width:25%; height:25%; border:1px solid black" class="center" alt="Pavlova">
-		<h3>History</h3>
-		<p class="wrap">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac odio tempor orci dapibus ultrices in iaculis. Mi quis hendrerit dolor magna eget est lorem. Quam viverra orci sagittis eu volutpat odio. Consectetur lorem donec massa sapien faucibus. Ut pharetra sit amet aliquam id diam.
-		Consequat mauris nunc congue nisi vitae suscipit tellus. Dolor sed viverra ipsum nunc aliquet. Aliquet enim tortor at auctor urna nunc id cursus metus. In ornare quam viverra orci sagittis eu volutpat. Nibh tortor id aliquet lectus. Libero nunc consequat interdum varius sit amet mattis vulputate. Euismod nisi porta lorem mollis aliquam ut porttitor leo.
-		Dolor purus non enim praesent elementum facilisis leo. Cursus in hac habitasse platea dictumst quisque sagittis purus. Augue neque gravida in fermentum et.</p><br>
 		
-		<h3>Recipe</h3>
-		<table style="width:500px" class="center">
-			<tr>
-				<td>
-				<p><u>Ingredients</u></p>
-				<ul>
-					<li>1 (16 oz) package phyllo dough</li>
-					<li>1 lb chopped nuts</li>
-					<li>1 c butter</li>
-					<li>1 tsp ground cinnamon</li>
-					<li>1 c water</li>
-					<li>1 c sugar</li>
-					<li>1 tsp vanilla extract</li>
-					<li>1/2 c honey</li>
-				</ul>
-				<p><u>Directions</u><br>
-				Preheat oven to 350 degrees F(175 degrees C). Butter the bottoms and sides of a 9x13 inch pan.
-				Chop nuts and toss with cinnamon. Set aside. Unroll phyllo dough. Cut whole stack in half to fit pan. Cover phyllo with a dampened cloth to keep from drying out as you work.
-				Place two sheets of dough in pan, butter thoroughly. Repeat until you have 8 sheets layered. Sprinkle 2 - 3 tablespoons of nut mixture on top. Top with two sheets of dough, butter, nuts, layering as you go. The top layer should be about 6 - 8 sheets deep.
-				Using a sharp knife cut into diamond or square shapes all the way to the bottom of the pan. You may cut into 4 long rows the make diagonal cuts. Bake for about 50 minutes until baklava is golden and crisp.
-				Make sauce while baklava is baking. Boil sugar and water until sugar is melted. Add vanilla and honey. Simmer for about 20 minutes.
-				Remove baklava from oven and immediately spoon sauce over it. Let cool. Serve in cupcake papers. This freezes well. Leave it uncovered as it gets soggy if it is wrapped up.</p>
-				</td>
-			</tr>
-		</table><br><br>
+		<div id="main">	
+			<h1>Pavlova</h1>
+			<p class="wrap">
+				The elegant Pavlova Cake (or pie) consists of a base made of a meringue crust topped with whipped cream and fresh fruits such as kiwis, strawberries, etc.  In Australia, it is considered a fresh fruit pie
+				with a meringue crust.  No one knows who first created the famous dessert Pavlova.  But the name and the recipes first began appearing soon after Russian prima ballerina and choreographer, Anna Matveyevna 
+				Pavlova (1881-1931), began touring across America, Europe, and the UK in 1910.  In America, she danced at the Metropolitan Opera House in New York.  Anna Pavlova was one of the most celebrated and 
+				influential ballet dancers of her time.
+				<a href="https://whatscookingamerica.net/History/Cakes/Pavlova.htm">(Source)</a>
+			</p><br>
+			
+			<table style="width:75%" class="center">
+				<tr>
+					<td>
+					<img src="Images/pavlova.jpg" style="width:22vw; height:16vw; border:1px solid black" class="center" alt="Pavlova">
+					<h3><a href="https://sallysbakingaddiction.com/2018/03/21/pavlova/">Pavlova</a></h3>
+					<p>Servings: <input type="text" id="servings" size="1" value="8" onchange="increasePavlova()"></p>
+					<p><u>Ingredients</u></p>
+					<ul>						
+						<li><span id="eggs">4</span> large egg whites</li>
+						<li><span id="fineSugar">1</span> c superfine sugar</li>
+						<li><span id="vanilla">1</span> tsp pure vanilla extract</li>
+						<li><span id="tartar">0.5</span> tsp cream of tartar</li>
+						<li><span id="cornstarch">1</span> tsp cornstarch</li>
+					</ul>
+						<p><u>Whipped Cream + Toppings</u></p>
+					<ul>
+						<li><span id="cream">1.25</span> c heavy cream</li>
+						<li><span id="sugar">3</span> tbsp granulated sugar</li>
+						<li><span id="vanillaTopping">1</span> tsp pure vanilla extract</li>
+						<li>Fresh fruit, lemon curd, or any other desired toppings</li>
+					</ul>
+					<p><u>Directions</u><br>
+						1. Preheat the oven to 350°F. Line a large baking sheet with parchment paper or a silicone baking mat. (Preliminary note: you will quickly reduce the oven to 200°F in step 4.)<br>
+						2. With a handheld mixer or a stand mixer fitted with a whisk attachment, beat the egg whites until soft peaks form, about 5 minutes. Add the sugar in 2 additions, beating for 30 seconds between, 
+						then continue beating on high speed until glossy stiff peaks form, about 2 more minutes. The peaks should be stiff enough that you can hold the whisk upright and the peaks won't move. 
+						Add the vanilla extract and beat for 1 more minute. The peaks should still be very stiff. If not, keep on mixing on high speed. Using a rubber spatula, fold in the cream of tartar and cornstarch.<br>
+						3. Spread the pavlova mixture into an 8-9-inch circle (see note for mini size). You can make decorative peaks with the back of a large spoon if desired. Make sure the edges are 
+						relatively tall and there is a nice dip in the center.<br>
+						4. Place pavlova in the oven. As soon as you close the oven door, reduce heat to 200°F. The pavlova will stay in the oven as it cools down to 200°F. Bake until the pavlova is firm and dry, 
+						about 90 minutes total. Rotate the baking sheet if you notice some spots browning. Try to limit how many times you open the oven as the cool air will interrupt the baking.<br>
+						5. Turn the oven off and let the pavlova cool inside the oven. Once the pavlova is cool, you can store it covered tightly at room temperature for up to 2 days. Or serve right away.<br>
+						6. Make the whipped cream: Using a hand mixer or a stand mixer fitted with a whisk attachment, beat the heavy cream, granulated sugar, and vanilla extract on medium-high speed until soft peaks form, 
+						about 3 minutes. You can use right away or cover and store in the refrigerator for a few days.<br>
+						7. Once cool, top the pavlova with whipped cream and assorted toppings. Slice and serve.
+					</p>
+					</td>
+				</tr>
+			</table><br><br>
+		</div>
 		
 		<footer>
 			&copy;2018 Jessica Churchill

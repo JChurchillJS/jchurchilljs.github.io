@@ -4,7 +4,7 @@
 		<!--
 			CIS166AA: Italy
 			Author: Jessica Churchill
-			Date: 09/10/2018
+			Date: 09/15/2018
 		-->
 		
 		<meta charset="utf-8" />
@@ -12,9 +12,13 @@
 		<link rel="stylesheet" href="style.css" />
 		<!-- Script for older browsers -->
 		<script src="modernizr.custom.05819.js"></script>
+		<!-- Increase ingredient amounts when serving size is increased  -->
+		<script src="JavaScript/ServingSize.js"></script>
 	</head>
+	
 	<body>
-		<img src="banner.png" style="width:100%; height:250px" alt="Sweets top banner">
+		<img src="Images/banner.png" style="width:100%; height:13vw; box-shadow: 0 0 6px #000000" alt="Sweets Top Banner">
+		
 		<nav>
 			<ul>
 				<li><a href="index.html">Home</a></li>
@@ -25,40 +29,49 @@
 				<li><a href="mexico.html">Mexico</a></li>
 			</ul>
 		</nav>
-		<header>
-			<h1>Tiramisu</h1>
-		</header>
-		<img src="tiramisu.jpg" style="width:25%; height:25%; border:1px solid black" class="center" alt="Tiramisu">
-		<h3>History</h3>
-		<p class="wrap">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac odio tempor orci dapibus ultrices in iaculis. Mi quis hendrerit dolor magna eget est lorem. Quam viverra orci sagittis eu volutpat odio. Consectetur lorem donec massa sapien faucibus. Ut pharetra sit amet aliquam id diam.
-		Consequat mauris nunc congue nisi vitae suscipit tellus. Dolor sed viverra ipsum nunc aliquet. Aliquet enim tortor at auctor urna nunc id cursus metus. In ornare quam viverra orci sagittis eu volutpat. Nibh tortor id aliquet lectus. Libero nunc consequat interdum varius sit amet mattis vulputate. Euismod nisi porta lorem mollis aliquam ut porttitor leo.
-		Dolor purus non enim praesent elementum facilisis leo. Cursus in hac habitasse platea dictumst quisque sagittis purus. Augue neque gravida in fermentum et.</p><br>
 		
-		<h3>Recipe</h3>
-		<table style="width:500px" class="center">
-			<tr>
-				<td>
-				<p><u>Ingredients</u></p>
-				<ul>
-					<li>1 (16 oz) package phyllo dough</li>
-					<li>1 lb chopped nuts</li>
-					<li>1 c butter</li>
-					<li>1 tsp ground cinnamon</li>
-					<li>1 c water</li>
-					<li>1 c sugar</li>
-					<li>1 tsp vanilla extract</li>
-					<li>1/2 c honey</li>
-				</ul>
-				<p><u>Directions</u><br>
-				Preheat oven to 350 degrees F(175 degrees C). Butter the bottoms and sides of a 9x13 inch pan.
-				Chop nuts and toss with cinnamon. Set aside. Unroll phyllo dough. Cut whole stack in half to fit pan. Cover phyllo with a dampened cloth to keep from drying out as you work.
-				Place two sheets of dough in pan, butter thoroughly. Repeat until you have 8 sheets layered. Sprinkle 2 - 3 tablespoons of nut mixture on top. Top with two sheets of dough, butter, nuts, layering as you go. The top layer should be about 6 - 8 sheets deep.
-				Using a sharp knife cut into diamond or square shapes all the way to the bottom of the pan. You may cut into 4 long rows the make diagonal cuts. Bake for about 50 minutes until baklava is golden and crisp.
-				Make sauce while baklava is baking. Boil sugar and water until sugar is melted. Add vanilla and honey. Simmer for about 20 minutes.
-				Remove baklava from oven and immediately spoon sauce over it. Let cool. Serve in cupcake papers. This freezes well. Leave it uncovered as it gets soggy if it is wrapped up.</p>
-				</td>
-			</tr>
-		</table><br><br>
+		<div id="main">	
+			<h1>Tiramisu</h1>
+			<p class="wrap">
+				The Italian translation for tiramisu is “carry me up.”  Also known as Tuscan Trifle.  Traditional tiramisu is a pudding-like dessert that usually consists of sponge cake or ladyfingers dipped in a liqueur,
+				then layered with grated chocolate and rich custard.  Tramisu was originally made as a loose custard.  It is only in recent years that using mascarpone cheese has come into fashion.
+				<a href="https://whatscookingamerica.net/History/Cakes/Tiramisu.htm">(Source)</a>
+			</p><br>
+			
+			<table style="width:75%" class="center">
+				<tr>
+					<td>
+					<img src="Images/tiramisu.jpg" style="width:22vw; height:13vw; border:1px solid black" class="center" alt="Tiramisu">
+					<h3><a href="https://bakingamoment.com/classic-tiramisu-recipe/">Authentic Tiramisu</a></h3>
+					<p>Servings: <input type="text" id="servings" size="1" value="12" onchange="increaseTiramisu()"></p>
+					<p><u>Ingredients</u></p>
+					<ul>
+						<li><span id="eggs">4</span> large egg yolks</li>
+						<li><span id="sugar">0.5</span> c sugar</li>
+						<li><span id="wine">0.33</span> c Marsala wine</li>
+						<li><span id="cheese">16</span> oz mascarpone cheese</li>
+						<li><span id="cream">1</span> c heavy cream</li>
+						<li><span id="espresso">2</span> c brewed espresso</li>
+						<li><span id="liqueur">3</span> tbsp coffee liqueur or brandy</li>
+						<li><span id="powderedSugar">3</span> tbsp powerdered sugar</li>
+						<li><span id="ladyfingers">48</span> ladyfingers</li>
+						<li><span id="cocoa">2</span> tsp unsweetened cocoa powder</li>
+					</ul>
+					<p><u>Directions</u><br>
+						1. Place the egg yolks, sugar, and Marsala in a large metal mixing bowl, and set it over a pot of simmering water.<br>
+						2. Cook, whisking, until the mixture is pale, thick, and doubled in volume (about 5 minutes).<br>
+						3. Remove from the heat, and whisk in the mascarpone.<br>
+						4. Whip the cream until it holds stiff peaks.<br>
+						5. Fold the whipped cream into the mascarpone mixture.<br>
+						6. Set the filling aside.<br>
+						7. Whisk the espresso, liqueur, and powdered sugar together in a shallow dish.<br>
+						8. One at a time, dip the ladyfingers into the espresso mixture and arrange in an even layer in the bottom of a 9-inch by 13-inch pan. (Line the ladyfingers up in two straight rows of twelve.)<br>
+						9. Spread half the filling over the ladyfingers, and repeat.<br>
+						10. Spread the rest of the filling on top, dust with cocoa powder, and refrigerate for 8 hours.</p>
+					</td>
+				</tr>
+			</table><br><br>
+		</div>
 		
 		<footer>
 			&copy;2018 Jessica Churchill
