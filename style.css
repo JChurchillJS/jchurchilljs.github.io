@@ -13,7 +13,7 @@ body {
 h1 {
 	color: #000000;
     text-align: center;
-	font: 6.5vw/0.8 'Cookie', cursive;
+	font: 7em/0.8 'Cookie', cursive;
 	margin-top: 15px;
 	margin-bottom: 0;
 	letter-spacing: 3px;
@@ -23,7 +23,7 @@ h1 {
 h2 {
 	color: #000000;
     text-align: center;
-	font-size: 2vw;
+	font-size: 2.4em;
 	font-family: 'Source Sans Pro', verdana;
 	margin-bottom: 0;
 }
@@ -31,7 +31,7 @@ h2 {
 h3 {
     color: #000000;
     text-align: center;
-	font-size: 2.5vw;
+	font-size: 2.5em;
 	font: Georgia;
 	margin-top: 0px;
 	margin-bottom: 0;
@@ -39,20 +39,20 @@ h3 {
 
 p {
 	color: #000000;
-	font-size: 0.95vw;
+	font-size: 1.2em;
 	font-family: 'Source Sans Pro', verdana;
 }
 
 a {
 	color: #3d7a7a;
-	font-size: 0.8vw;
+	font-size: 0.8em;
 	font-family: Georgia, serif;
 	text-decoration: none;
 }
 
 h3 a {
 	color: #3d7a7a;
-	font-size: 1.55vw;
+	font-size: 0.7em;
 	font-family: Georgia, serif;
 	text-decoration: none;
 }
@@ -64,7 +64,7 @@ a:hover {
 
 nav a {
 	color: #000000;
-	font-size: 1.55vw;
+	font-size: 1.85em;
 	font-family: Georgia, serif;
 	text-decoration: none;
 }
@@ -88,7 +88,7 @@ nav ul {
 	background-color: #ffffff;
 	list-style-type: none;
     padding: 20px;
-    width: 7.2vw;
+    width: 8em;
 	text-align: right;
 	position: fixed;
 	box-shadow: 0 0 6px #000000;
@@ -96,12 +96,13 @@ nav ul {
 
 nav li {
 	text-align: right;
+	font-size: 1em;
 }
 
 
 li {
 	text-align: left;
-	font-size: .85vw;
+	font-size: 1.05em;
 	font-family: 'Source Sans Pro', verdana;
 }
 
@@ -109,7 +110,7 @@ footer {
 	background-color: #3d7a7a;
 	color: #ffffff;
     font-family: 'Source Sans Pro', georgia;
-    font-size: .8vw;
+    font-size: 0.95em;
 	text-align: center;
 	position: fixed;
 	bottom: 0;
