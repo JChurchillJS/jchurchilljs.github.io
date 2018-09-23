@@ -4,7 +4,7 @@
 		<!--
 			CIS166AA: Greece
 			Author: Jessica Churchill
-			Date: 09/15/2018
+			Date: 09/18/2018
 		-->
 		
 		<meta charset="utf-8" />
@@ -12,6 +12,8 @@
 		<link rel="stylesheet" href="style.css" />
 		<!-- Script for older browsers -->
 		<script src="JavaScript/modernizr.custom.05819.js"></script>
+		<!-- Convert decimals to fractions -->
+		<script src="JavaScript/Fraction.js"></script>
 		<!-- Increase ingredient amounts when serving size is increased  -->
 		<script src="JavaScript/ServingSize.js"></script>
 	</head>
@@ -69,6 +71,11 @@
 				</tr>
 			</table><br><br>
 		</div>
+		
+		<script>
+			// Convert initial decimal to a fraction.
+			document.getElementById('honey').innerHTML = toFraction(0.5);
+		</script>
 		
 		<footer>
 			&copy;2018 Jessica Churchill

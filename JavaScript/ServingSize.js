@@ -1,7 +1,7 @@
 /*
 	CIS166AA: Serving Size JavaScript
 	Author: Jessica Churchill
-	Date: 09/15/2018
+	Date: 09/18/2018
 */
 
 // Initialize serving size
@@ -20,14 +20,14 @@ function increaseBaklava()
 	
 	// Multiply new serving size by each ingredient's amount, then divide by base amount of servings.
 	// Change serving size to new value.
-	document.getElementById('phyllo').innerHTML = input * phyllo / base;
-	document.getElementById('nuts').innerHTML = input * nuts / base;	
-	document.getElementById('butter').innerHTML = input * butter / base;	
-	document.getElementById('cinnamon').innerHTML = input * cinnamon / base;	
-	document.getElementById('water').innerHTML = input * water / base;	
-	document.getElementById('sugar').innerHTML = input * sugar / base;	
-	document.getElementById('vanilla').innerHTML = input * vanilla / base;	
-	document.getElementById('honey').innerHTML = input * honey / base;	
+	document.getElementById('phyllo').innerHTML = toFraction(input * phyllo / base);
+	document.getElementById('nuts').innerHTML = toFraction(input * nuts / base);	
+	document.getElementById('butter').innerHTML = toFraction(input * butter / base);	
+	document.getElementById('cinnamon').innerHTML = toFraction(input * cinnamon / base);	
+	document.getElementById('water').innerHTML = toFraction(input * water / base);	
+	document.getElementById('sugar').innerHTML = toFraction(input * sugar / base);	
+	document.getElementById('vanilla').innerHTML = toFraction(input * vanilla / base);	
+	document.getElementById('honey').innerHTML = toFraction(input * honey / base);	
 }
 
 // Function to increase Tiramisu measurements when the user opts to increase the serving size of the baklava recipe.
@@ -43,16 +43,16 @@ function increaseTiramisu()
 	
 	// Multiply new serving size by each ingredient's amount, then divide by base amount of servings.
 	// Change serving size to new value.
-	document.getElementById('eggs').innerHTML = input * eggs / base;
-	document.getElementById('sugar').innerHTML = input * sugar / base;	
-	document.getElementById('wine').innerHTML = input * wine / base;	
-	document.getElementById('cheese').innerHTML = input * cheese / base;	
-	document.getElementById('cream').innerHTML = input * cream / base;	
-	document.getElementById('espresso').innerHTML = input * espresso / base;	
-	document.getElementById('liqueur').innerHTML = input * liqueur / base;	
-	document.getElementById('powderedSugar').innerHTML = input * powderedSugar / base;	
-	document.getElementById('ladyfingers').innerHTML = input * ladyfingers / base;	
-	document.getElementById('cocoa').innerHTML = input * cocoa / base;
+	document.getElementById('eggs').innerHTML = toFraction(input * eggs / base);
+	document.getElementById('sugar').innerHTML = toFraction(input * sugar / base);	
+	document.getElementById('wine').innerHTML = toFraction(input * wine / base);	
+	document.getElementById('cheese').innerHTML = toFraction(input * cheese / base);	
+	document.getElementById('cream').innerHTML = toFraction(input * cream / base);	
+	document.getElementById('espresso').innerHTML = toFraction(input * espresso / base);	
+	document.getElementById('liqueur').innerHTML = toFraction(input * liqueur / base);	
+	document.getElementById('powderedSugar').innerHTML = toFraction(input * powderedSugar / base);	
+	document.getElementById('ladyfingers').innerHTML = toFraction(input * ladyfingers / base);	
+	document.getElementById('cocoa').innerHTML = toFraction(input * cocoa / base);
 }
 
 // Function to increase Pavlova measurements when the user opts to increase the serving size of the baklava recipe.
@@ -68,14 +68,14 @@ function increasePavlova()
 	
 	// Multiply new serving size by each ingredient's amount, then divide by base amount of servings.
 	// Change serving size to new value.
-	document.getElementById('eggs').innerHTML = input * eggs / base;
-	document.getElementById('fineSugar').innerHTML = input * fineSugar / base;	
-	document.getElementById('vanilla').innerHTML = input * vanilla / base;	
-	document.getElementById('tartar').innerHTML = input * tartar / base;	
-	document.getElementById('cornstarch').innerHTML = input * cornstarch / base;	
-	document.getElementById('cream').innerHTML = input * cream / base;	
-	document.getElementById('sugar').innerHTML = input * sugar / base;	
-	document.getElementById('vanillaTopping').innerHTML = input * vanillaTopping / base;		
+	document.getElementById('eggs').innerHTML = toFraction(input * eggs / base);
+	document.getElementById('fineSugar').innerHTML = toFraction(input * fineSugar / base);	
+	document.getElementById('vanilla').innerHTML = toFraction(input * vanilla / base);	
+	document.getElementById('tartar').innerHTML = toFraction(input * tartar / base);	
+	document.getElementById('cornstarch').innerHTML = toFraction(input * cornstarch / base);	
+	document.getElementById('cream').innerHTML = toFraction(input * cream / base);	
+	document.getElementById('sugar').innerHTML = toFraction(input * sugar / base);	
+	document.getElementById('vanillaTopping').innerHTML = toFraction(input * vanillaTopping / base);		
 }
 
 // Function to increase Daifuku measurements when the user opts to increase the serving size of the baklava recipe.
@@ -91,12 +91,12 @@ function increaseDaifuku()
 	
 	// Multiply new serving size by each ingredient's amount, then divide by base amount of servings.
 	// Change serving size to new value.
-	document.getElementById('flour').innerHTML = input * flour / base;
-	document.getElementById('water').innerHTML = input * water / base;	
-	document.getElementById('sugar').innerHTML = input * sugar / base;	
-	document.getElementById('paste').innerHTML = input * paste / base;	
-	document.getElementById('beans').innerHTML = input * beans / base;	
-	document.getElementById('ankoSugar').innerHTML = input * ankoSugar / base;	
+	document.getElementById('flour').innerHTML = toFraction(input * flour / base);
+	document.getElementById('water').innerHTML = toFraction(input * water / base);	
+	document.getElementById('sugar').innerHTML = toFraction(input * sugar / base);	
+	document.getElementById('paste').innerHTML = toFraction(input * paste / base);	
+	document.getElementById('beans').innerHTML = toFraction(input * beans / base);	
+	document.getElementById('ankoSugar').innerHTML = toFraction(input * ankoSugar / base);	
 }
 
 // Function to increase Flan measurements when the user opts to increase the serving size of the baklava recipe.
@@ -112,9 +112,9 @@ function increaseFlan()
 	
 	// Multiply new serving size by each ingredient's amount, then divide by base amount of servings.
 	// Change serving size to new value.
-	document.getElementById('sugar').innerHTML = input * sugar / base;
-	document.getElementById('eggs').innerHTML = input * eggs / base;	
-	document.getElementById('milk').innerHTML = input * milk / base;	
-	document.getElementById('vanilla').innerHTML = input * vanilla / base;	
-	document.getElementById('orange').innerHTML = input * orange / base;	
+	document.getElementById('sugar').innerHTML = toFraction(input * sugar / base);
+	document.getElementById('eggs').innerHTML = toFraction(input * eggs / base);	
+	document.getElementById('milk').innerHTML = toFraction(input * milk / base);	
+	document.getElementById('vanilla').innerHTML = toFraction(input * vanilla / base);	
+	document.getElementById('orange').innerHTML = toFraction(input * orange / base);	
 }

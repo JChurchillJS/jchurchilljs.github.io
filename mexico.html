@@ -4,7 +4,7 @@
 		<!--
 			CIS166AA: Mexico
 			Author: Jessica Churchill
-			Date: 09/15/2018
+			Date: 09/18/2018
 		-->
 		
 		<meta charset="utf-8" />
@@ -12,6 +12,8 @@
 		<link rel="stylesheet" href="style.css" />
 		<!-- Script for older browsers -->
 		<script src="modernizr.custom.05819.js"></script>
+		<!-- Convert decimals to fractions -->
+		<script src="JavaScript/Fraction.js"></script>
 		<!-- Increase ingredient amounts when serving size is increased  -->
 		<script src="JavaScript/ServingSize.js"></script>
 	</head>
@@ -55,10 +57,10 @@
 						<li>Sliced fruit</li>
 					</ul>
 					<p><u>Directions</u><br>
-						1. Heat 1/2 cup sugar in a heavy skillet or saucepan, stirring constantly until it melts and turns a dark golden color.<br>
+						1. Heat half of the sugar in a heavy skillet or saucepan, stirring constantly until it melts and turns a dark golden color.<br>
 						2. Remove from heat and immediately pour into a 4 1/2 cup metal ring mold.  Swish it around so it evenly coats the bottom of the ring mold.<br>
 						3. In a large mixing bowl, lightly beat the eggs.<br>
-						4. Stir in milk, 1/2 cup sugar, vanilla and orange peel.<br>
+						4. Stir in milk, the rest of the sugar, vanilla and orange peel.<br>
 						5. Place caramel coated ring mold in another pan and place on an oven rack.<br>
 						6. Pour egg mixture into the ring mold and pour the hottest tap water possible around the ring mold to a depth of 1 inch.<br>
 						7. Bake at 325°F for close to l hour or until a knife comes out clean.<br>
@@ -71,6 +73,11 @@
 				</tr>
 			</table><br><br>
 		</div>
+		
+		<script>
+			// Convert initial decimal to a fraction.
+			document.getElementById('vanilla').innerHTML = toFraction(1.5);
+		</script>
 		
 		<footer>
 			&copy;2018 Jessica Churchill
