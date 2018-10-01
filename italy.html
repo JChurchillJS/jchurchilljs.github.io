@@ -4,7 +4,7 @@
 		<!--
 			CIS166AA: Italy
 			Author: Jessica Churchill
-			Date: 09/18/2018
+			Date: 09/30/2018
 		-->
 		
 		<meta charset="utf-8" />
@@ -29,6 +29,7 @@
 				<li><a href="australia.html">Australia</a></li>
 				<li><a href="japan.html">Japan</a></li>
 				<li><a href="mexico.html">Mexico</a></li>
+				<li><a href="contact.html">Contact</a></li>
 			</ul>
 		</nav>
 		
@@ -45,7 +46,8 @@
 					<td>
 					<img src="Images/tiramisu.jpg" style="width:22vw; height:13vw; border:1px solid black" class="center" alt="Tiramisu">
 					<h3><a href="https://bakingamoment.com/classic-tiramisu-recipe/">Authentic Tiramisu</a></h3>
-					<p>Servings: <input type="text" id="servings" size="1" value="12" onchange="increaseTiramisu()"></p>
+					<p>Servings: <input type="text" id="servings" style="height:21px; text-align:center" size="1" value="12" onchange="increaseTiramisu()">
+					<button id="resetButton" onclick="resetServings()">Reset</button><br></p>
 					<p><u>Ingredients</u></p>
 					<ul>
 						<li><span id="eggs">4</span> large egg yolks</li>
@@ -79,6 +81,22 @@
 			// Convert initial decimal to a fraction.
 			document.getElementById('sugar').innerHTML = toFraction(0.5);
 			document.getElementById('wine').innerHTML = toFraction(0.33);
+			
+			// Reset serving size and default ingredient measurements when Reset button is clicked.
+			function resetServings()
+			{
+				document.getElementById('servings').value = 12;
+				document.getElementById('eggs').innerHTML = 4;
+				document.getElementById('sugar').innerHTML = toFraction(0.5);	
+				document.getElementById('wine').innerHTML = toFraction(0.33);	
+				document.getElementById('cheese').innerHTML = 16;	
+				document.getElementById('cream').innerHTML = 1;	
+				document.getElementById('espresso').innerHTML = 2;	
+				document.getElementById('liqueur').innerHTML = 3;	
+				document.getElementById('powderedSugar').innerHTML = 3;	
+				document.getElementById('ladyfingers').innerHTML = 48;	
+				document.getElementById('cocoa').innerHTML = 2;				
+			}
 		</script>
 		
 		<footer>

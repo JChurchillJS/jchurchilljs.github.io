@@ -4,7 +4,7 @@
 		<!--
 			CIS166AA: Greece
 			Author: Jessica Churchill
-			Date: 09/18/2018
+			Date: 09/30/2018
 		-->
 		
 		<meta charset="utf-8" />
@@ -29,6 +29,7 @@
 				<li><a href="australia.html">Australia</a></li>
 				<li><a href="japan.html">Japan</a></li>
 				<li><a href="mexico.html">Mexico</a></li>
+				<li><a href="contact.html">Contact</a></li>
 			</ul>
 		</nav>
 		
@@ -46,7 +47,8 @@
 					<td>
 					<img src="Images/baklava.jpg" style="width:21vw; height:16vw; border:1px solid black" class="center" alt="Baklava">
 					<h3><a href="https://www.allrecipes.com/recipe/9454/greek-baklava/">Greek Baklava</a></h3>
-					<p>Servings: <input type="text" id="servings" size="1" value="18" onchange="increaseBaklava()"></p>
+					<p>Servings: <input type="text" id="servings" style="height:21px; text-align:center" size="1" value="18" onchange="increaseBaklava()">
+					<button id="resetButton" onclick="resetServings()">Reset</button><br></p>
 					<p><u>Ingredients</u></p>
 					<ul>
 						<li><span id="phyllo">1</span> (16 oz) package phyllo dough</li>
@@ -58,6 +60,7 @@
 						<li><span id="vanilla">1</span> tsp vanilla extract</li>
 						<li><span id="honey">0.5</span> c honey</li>
 					</ul>
+					
 					<p><u>Directions</u><br>
 						1. Preheat oven to 350 degrees F(175 degrees C). Butter the bottoms and sides of a 9x13 inch pan.<br>
 						2. Chop nuts and toss with cinnamon. Set aside. Unroll phyllo dough. Cut whole stack in half to fit pan. Cover phyllo with a dampened cloth to keep from drying out as you work.  Place two sheets of 
@@ -75,6 +78,20 @@
 		<script>
 			// Convert initial decimal to a fraction.
 			document.getElementById('honey').innerHTML = toFraction(0.5);
+			
+			// Reset serving size and default ingredient measurements when Reset button is clicked.
+			function resetServings()
+			{
+				document.getElementById('servings').value = 18;
+				document.getElementById('phyllo').innerHTML = 1;
+				document.getElementById('nuts').innerHTML = 1;	
+				document.getElementById('butter').innerHTML = 1;	
+				document.getElementById('cinnamon').innerHTML = 1;	
+				document.getElementById('water').innerHTML = 1;	
+				document.getElementById('sugar').innerHTML = 1;	
+				document.getElementById('vanilla').innerHTML = 1;	
+				document.getElementById('honey').innerHTML = toFraction(0.5);	
+			}
 		</script>
 		
 		<footer>

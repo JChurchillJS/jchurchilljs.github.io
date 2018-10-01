@@ -4,7 +4,7 @@
 		<!--
 			CIS166AA: Australia
 			Author: Jessica Churchill
-			Date: 09/18/2018
+			Date: 09/30/2018
 		-->
 		
 		<meta charset="utf-8" />
@@ -29,6 +29,7 @@
 				<li><a href="australia.html">Australia</a></li>
 				<li><a href="japan.html">Japan</a></li>
 				<li><a href="mexico.html">Mexico</a></li>
+				<li><a href="contact.html">Contact</a></li>
 			</ul>
 		</nav>
 		
@@ -47,7 +48,8 @@
 					<td>
 					<img src="Images/pavlova.jpg" style="width:22vw; height:16vw; border:1px solid black" class="center" alt="Pavlova">
 					<h3><a href="https://sallysbakingaddiction.com/2018/03/21/pavlova/">Pavlova</a></h3>
-					<p>Servings: <input type="text" id="servings" size="1" value="8" onchange="increasePavlova()"></p>
+					<p>Servings: <input type="text" id="servings" style="height:21px; text-align:center" size="1" value="8" onchange="increasePavlova()">
+					<button id="resetButton" onclick="resetServings()">Reset</button><br></p>
 					<p><u>Ingredients</u></p>
 					<ul>						
 						<li><span id="eggs">4</span> large egg whites</li>
@@ -86,6 +88,20 @@
 			// Convert initial decimal to a fraction.
 			document.getElementById('tartar').innerHTML = toFraction(0.5);
 			document.getElementById('cream').innerHTML = toFraction(1.25);
+			
+			// Reset serving size and default ingredient measurements when Reset button is clicked.
+			function resetServings()
+			{
+				document.getElementById('servings').value = 8;
+				document.getElementById('eggs').innerHTML = 4;
+				document.getElementById('fineSugar').innerHTML = 1;
+				document.getElementById('vanilla').innerHTML = 1;
+				document.getElementById('tartar').innerHTML = toFraction(0.5);				
+				document.getElementById('cornstarch').innerHTML = 1;	
+				document.getElementById('cream').innerHTML = toFraction(1.25);
+				document.getElementById('sugar').innerHTML = 3;	
+				document.getElementById('vanillaTopping').innerHTML = 1;				
+			}
 		</script>
 		
 		<footer>

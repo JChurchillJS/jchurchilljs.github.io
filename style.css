@@ -125,6 +125,19 @@ th, td {
     padding: 15px;
 }
 
+button {
+	font-family: 'Source Sans Pro', georgia;
+	font-size: 0.85em;
+	font-weight: bold;
+	line-height: 25px;
+	padding: 0 10px;
+	border: 1px solid black;
+}
+
+button:hover {
+	background: #75aea7;
+}
+
 .center {
     display: block;
     margin-left: auto;

@@ -4,7 +4,7 @@
 		<!--
 			CIS166AA: Japan
 			Author: Jessica Churchill
-			Date: 09/18/2018
+			Date: 09/30/2018
 		-->
 		
 		<meta charset="utf-8" />
@@ -29,6 +29,7 @@
 				<li><a href="australia.html">Australia</a></li>
 				<li><a href="japan.html">Japan</a></li>
 				<li><a href="mexico.html">Mexico</a></li>
+				<li><a href="contact.html">Contact</a></li>
 			</ul>
 		</nav>
 		
@@ -46,7 +47,8 @@
 					<td>
 					<img src="Images/daifuku.jpg" style="width:22vw; height:15.5vw; border:1px solid black" class="center" alt="Tiramisu">
 					<h3><a href="http://www.japanesecooking101.com/daifuku-mochi-recipe/">Daifuku Mochi</a></h3>
-					<p>Servings: <input type="text" id="servings" size="1" value="8" onchange="increaseDaifuku()"></p>
+					<p>Servings: <input type="text" id="servings" size="1" style="height:21px; text-align:center" value="8" onchange="increaseDaifuku()">
+					<button id="resetButton" onclick="resetServings()">Reset</button><br></p>
 					<p><u>Ingredients</u></p>
 					<ul>
 						<li><span id="flour">1</span> c Mochiko (sweet rice flour)</li>
@@ -87,6 +89,18 @@
 			document.getElementById('sugar').innerHTML = toFraction(0.75);
 			document.getElementById('paste').innerHTML = toFraction(0.5);
 			document.getElementById('ankoSugar').innerHTML = toFraction(1.5);
+			
+			// Reset serving size and default ingredient measurements when Reset button is clicked.
+			function resetServings()
+			{
+				document.getElementById('servings').value = 8;
+				document.getElementById('flour').innerHTML = 1;
+				document.getElementById('water').innerHTML = toFraction(0.75);	
+				document.getElementById('sugar').innerHTML = toFraction(0.75);	
+				document.getElementById('paste').innerHTML = toFraction(0.5);	
+				document.getElementById('beans').innerHTML = 1;	
+				document.getElementById('ankoSugar').innerHTML = toFraction(1.5);			
+			}
 		</script>
 		
 		<footer>
