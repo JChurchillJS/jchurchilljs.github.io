@@ -4,7 +4,7 @@
 		<!--
 			CIS166AA: Contact Form
 			Author: Jessica Churchill
-			Date: 09/30/2018
+			Date: 10/07/2018
 		-->
 		
 		<meta charset="utf-8" />
@@ -25,6 +25,7 @@
 				<li><a href="australia.html">Australia</a></li>
 				<li><a href="japan.html">Japan</a></li>
 				<li><a href="mexico.html">Mexico</a></li>
+				<li><a href="security.html">Web Security</a></li>
 				<li><a href="contact.html">Contact</a></li>
 			</ul>
 		</nav>
@@ -47,14 +48,14 @@
 				<button type="button" class="center" style="line-height:35px; padding:0 20px; font-size:0.95em;" onclick="checkInput(); checkIfHuman()">Submit</button>
 			</form> 
 			<br><br>
-
 		</div>
 		
 		<script>
-		/*I used the built-in browser debugger to pinpoint small errors I made (like forgetting to add parenthesis in my if and if/else statements).  For most of the input fields, I used try/catch statements to prevent
+		/*
+			I used the built-in browser debugger to pinpoint small errors I made (like forgetting to add parenthesis in my if and if/else statements).  For most of the input fields, I used try/catch statements to prevent
 			the user from progessing.  It also displays an error message describing the source of the error and resets some text areas.  When a user selects the correct option or inputs the correct text, then clicks 
-			the submit button, they are allowed to proceed to the next step and no error messages should appear.*/
-			
+			the submit button, they are allowed to proceed to the next step and no error messages should appear.
+		*/
 		
 			// Variables for input fields
 			var humanYes = document.getElementById('humanYes'), humanNo = document.getElementById('humanNo'), humanMaybe = document.getElementById('humanMaybe'), firstName = document.getElementById('firstName'),

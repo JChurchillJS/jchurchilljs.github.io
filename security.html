@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--
+			CIS166AA: Web Security
+			Author: Jessica Churchill
+			Date: 10/07/2018
+		-->
+		
+		<meta charset="utf-8" />
+		<title>Web Security</title>
+		<link rel="stylesheet" href="style.css" />
+		<!-- Script for older browsers -->
+		<script src="modernizr.custom.05819.js"></script>
+	</head>
+	
+	<body>
+		<img src="Images/banner.png" style="width:100%; height:13vw; box-shadow: 0 0 6px #000000" alt="Sweets Top Banner">
+		
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="greece.html">Greece</a></li>
+				<li><a href="italy.html">Italy</a></li>
+				<li><a href="australia.html">Australia</a></li>
+				<li><a href="japan.html">Japan</a></li>
+				<li><a href="mexico.html">Mexico</a></li>
+				<li><a href="security.html">Web Security</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+		
+		<div id="main">
+			<h1>Web Security</h1><br>
+			
+			<h2>Introduction</h2>
+			<p class="wrap">
+				The purpose of website security is to prevent attacks. The more formal definition of website security is the act/practice of protecting websites from unauthorized access,
+				use, modification, destruction, or disruption.  Effective website security requires design effort across the whole of the website: in your web application, the configuration of the web server,
+				your policies for creating and renewing passwords, and the client-side code.
+				<a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Website_security" target="_blank">(Source)</a><br><br>
+			</p>
+			
+			<h2>Object Properties</h2>
+			<p class="wrap">
+				<table style="width:75%" class="wrap propTable">
+					<tr>
+						<th>Property</th>
+						<th>Description</th> 
+						<th style="width:25%">Example</th>
+					</tr>
+					<tr>
+						<td>appName</td>
+						<td>Name of the web browser displaying the page</td> 
+						<td id="appName">Click Here</td>
+					</tr>
+					<tr>
+						<td>platform</td>
+						<td>Operating system in use on the client computer</td> 
+						<td id="platform">Click Here</td>
+					</tr>
+					<tr>
+						<td>userAgent</td>
+						<td>String stored in the HTTP user-agent request header, which contains information about the browser, the platform name, and compatibility</td> 
+						<td id="userAgent">Click Here</td>
+					</tr>
+					<tr>
+						<td>height</td>
+						<td>Height of the display screen</td> 
+						<td id="height">Click Here</td>
+					</tr>
+					<tr>
+						<td>availWidth</td>
+						<td>Width of the display screen, not including operating system features such as the Windows taskbar</td> 
+						<td id="availWidth">Click Here</td>
+					</tr>
+					<tr>
+						<td>pixelDepth</td>
+						<td>Display screen's color resolution in bits per pixel</td> 
+						<td id="pixelDepth">Click Here</td>
+					</tr>
+				</table>
+				<br><br>
+			</p>			
+			
+			<h2>Useful Links</h2>
+			<h3 class="left wrap"><a href="https://www.getsafeonline.org/" target="_blank">Get Safe Online</a></h3>
+			<p class="wrap">
+				A website that lists the various ways to protect your computer and yourself when using online services.
+			</p><br>
+			<h3 class="left wrap"><a href="https://www.webroot.com/us/en/resources/tips-articles/online-activities-internet-security" target="_blank">Webroot: Best Practices for How to Safely Browse the Internet</a></h3>
+			<p class="wrap">
+				A small article on an Internet security website that describes some tips to stay safe online.
+			</p><br>
+			<h3 class="left wrap"><a href="https://ist.mit.edu/security/tips" target="_blank">MIT: Top Ten Safe Computing Tips</a></h3>
+			<p class="wrap">
+				This well-known university delivers ten useful tips on how to protect your computer from malware and other cybersecurity attacks.
+			</p><br><br><br>
+		</div>
+		
+		<script>
+			var platformEx = document.getElementById('platform'), appNameEx = document.getElementById('appName'), agentEx = document.getElementById('userAgent'), heightEx = document.getElementById('height'),
+				availWidthEx = document.getElementById('availWidth'), pixelEx = document.getElementById('pixelDepth');
+			
+			appNameEx.addEventListener("click", function(){appNameEx.textContent = navigator.appName;});
+			platformEx.addEventListener("click", function(){platformEx.textContent = navigator.platform;});
+			agentEx.addEventListener("click", function(){agentEx.textContent = navigator.userAgent;});
+			heightEx.addEventListener("click", function(){heightEx.textContent = screen.height + " px";});
+			availWidthEx.addEventListener("click", function(){availWidth.textContent = screen.availWidth + " px";});
+			pixelEx.addEventListener("click", function(){pixelEx.textContent = screen.pixelDepth + " bpp";});
+		</script>
+		
+		<footer>
+			&copy;2018 Jessica Churchill 
+		</footer>
+	</body>		
+</html>

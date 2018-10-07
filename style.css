@@ -1,7 +1,7 @@
 /*
 	CIS166AA: CSS Styles
 	Author: Jessica Churchill
-	Date: 09/15/2018
+	Date: 10/07/2018
 */
 
 body {
@@ -88,7 +88,7 @@ nav ul {
 	background-color: #ffffff;
 	list-style-type: none;
     padding: 20px;
-    width: 8em;
+    width: 10.9em;
 	text-align: right;
 	position: fixed;
 	box-shadow: 0 0 6px #000000;
@@ -117,12 +117,30 @@ footer {
 	width: 100%;	
 }
 
-table {
+table.recipeTable {
     border: 1px solid black;
 }
 
-th, td {
+table.recipeTable th, table.recipeTable td {
     padding: 15px;
+}
+
+table.propTable {
+	border-collapse: collapse;
+	border: 2px solid black;
+}
+
+table.propTable th, table.propTable td {
+	background-color: #dbdbdb;
+	border: 2px solid black;
+    padding: 20px;
+	font-size: 1.2em;
+	font-family: 'Source Sans Pro', verdana;
+}
+
+table.propTable th {
+    background-color: #3d7a7a;
+	font-size: 1.35em;
 }
 
 button {
