@@ -99,14 +99,21 @@
 		</div>
 		
 		<script>
+			// Variables to replace "Click Here" with relevant information
 			var platformEx = document.getElementById('platform'), appNameEx = document.getElementById('appName'), agentEx = document.getElementById('userAgent'), heightEx = document.getElementById('height'),
 				availWidthEx = document.getElementById('availWidth'), pixelEx = document.getElementById('pixelDepth');
 			
+			// Replace text with name of the user's web browser on click
 			appNameEx.addEventListener("click", function(){appNameEx.textContent = navigator.appName;});
+			// Replace text with user's operating system
 			platformEx.addEventListener("click", function(){platformEx.textContent = navigator.platform;});
+			// Replace text with user's browser info, platform name, and compatibility
 			agentEx.addEventListener("click", function(){agentEx.textContent = navigator.userAgent;});
+			// Replace text with user's screen height
 			heightEx.addEventListener("click", function(){heightEx.textContent = screen.height + " px";});
+			// Replace text with user's screen width, not including OS features
 			availWidthEx.addEventListener("click", function(){availWidth.textContent = screen.availWidth + " px";});
+			// Replace text with user's screen color resolution
 			pixelEx.addEventListener("click", function(){pixelEx.textContent = screen.pixelDepth + " bpp";});
 		</script>
 		
