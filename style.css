@@ -1,7 +1,7 @@
 /*
 	CIS166AA: CSS Styles
 	Author: Jessica Churchill
-	Date: 10/07/2018
+	Date: 10/19/2018
 */
 
 body {
@@ -32,7 +32,7 @@ h3 {
     color: #000000;
     text-align: center;
 	font-size: 2.5em;
-	font: Georgia;
+	font-family: georgia;
 	margin-top: 0px;
 	margin-bottom: 0;
 }
@@ -46,14 +46,14 @@ p {
 a {
 	color: #3d7a7a;
 	font-size: 0.8em;
-	font-family: Georgia, serif;
+	font-family: georgia, serif;
 	text-decoration: none;
 }
 
 h3 a {
 	color: #3d7a7a;
 	font-size: 0.7em;
-	font-family: Georgia, serif;
+	font-family: georgia, serif;
 	text-decoration: none;
 }
 
@@ -65,7 +65,7 @@ a:hover {
 nav a {
 	color: #000000;
 	font-size: 1.85em;
-	font-family: Georgia, serif;
+	font-family: georgia, serif;
 	text-decoration: none;
 }
 
@@ -121,8 +121,48 @@ table.recipeTable {
     border: 1px solid black;
 }
 
-table.recipeTable th, table.recipeTable td {
+table.recipeTable th, td {
     padding: 15px;
+}
+
+table.contactTable {
+	border: 2px solid black;
+	background-color: #dbdbdb;
+	padding: 20px;
+	font-size: 1.2em;
+	font-family: 'Source Sans Pro', verdana;
+}
+
+table.contactTable input[type=text], input[type=email], input[type=number], select, textarea {
+	width: 100%;
+    padding:3px 5px;
+    border: 1px solid #adadad;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+table.contactTable input[type=checkbox], input[type=radio] {
+    margin-bottom: 15px;
+}
+
+
+table.contactTable input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { 
+	-webkit-appearance: none; 
+	margin: 0; 
+}
+
+table.contactTable button {
+	background-color: #ffffff;
+	font-family: 'Source Sans Pro', georgia;
+	font-size: 0.85em;
+	font-weight: bold;
+	line-height: 25px;
+	padding: 0 10px;
+	border: 1px solid black;
+}
+
+table.contactTable button:hover {
+	background: #75aea7;
 }
 
 table.propTable {
@@ -144,6 +184,7 @@ table.propTable th {
 }
 
 button {
+	background-color: #3d7a7a;
 	font-family: 'Source Sans Pro', georgia;
 	font-size: 0.85em;
 	font-weight: bold;

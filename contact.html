@@ -4,14 +4,14 @@
 		<!--
 			CIS166AA: Contact Form
 			Author: Jessica Churchill
-			Date: 10/07/2018
+			Date: 10/19/2018
 		-->
 		
 		<meta charset="utf-8" />
 		<title>International Sweets</title>
 		<link rel="stylesheet" href="style.css" />
 		<!-- Script for older browsers -->
-		<script src="JavaScript/modernizr.custom.05819.js"></script>
+		<script src="JavaScript/modernizr.custom.05819.js"></script>		
 	</head>
 	
 	<body>
@@ -32,140 +32,34 @@
 		
 		<div id="main">
 			<h1>Contact Me</h1><br>
-				
-			<form id="contact">
-				<p class="wrap">
-					First name: <input type="text" id="firstName" style="padding:3px 5px"><br>
-					Last name: <input type="text" id="lastName" style="padding:3px 5px"><br>
-					E-mail address: <input type="text" id="email" style="padding:3px 5px"><br>
-					Phone number: <input type="text" id="phone" style="padding:3px 5px"><br>
-					Are you human? <input type="radio" name="humanQuestion" id="humanYes" value="Yes"> Yes <input type="radio" name="humanQuestion" id="humanNo" value="No"> No
-					<input type="radio" name="humanQuestion" id="humanMaybe" value="Maybe"> Maybe
-				</p>
-				<p class="wrap" id="answer"></p>
-				<p class="wrap" id="comment"></p>
-				<br><br>
-				<button type="button" class="center" style="line-height:35px; padding:0 20px; font-size:0.95em;" onclick="checkInput(); checkIfHuman()">Submit</button>
-			</form> 
+			
+			<table class="contactTable center" style="width:43%">
+				<tr>
+					<td>
+					<form id="contact" onsubmit="event.preventDefault(); validateForm(this);">
+					<p>
+						Full Name: <input type="text" id="fullName" required="required" onchange="this.setCustomValidity('')"><br>
+						E-mail Address: <input type="email" id="email" required="required" onchange="this.setCustomValidity('')"><br>
+						Phone Number: <input type="number" id="phone" min="1000000000" placeholder="1234567890" required="required"><br>
+						Favorite Desserts:<br>
+						<input type="checkbox" name="desserts" value="pies"> Pies <input type="checkbox" name="desserts" value="cakes"> Cakes <input type="checkbox" name="desserts" value="donuts"> Donuts
+						<input type="checkbox" name="desserts" value="crepes"> Crepes <input type="checkbox" name="desserts" value="cookies"> Cookies <input type="checkbox" name="desserts" value="other desserts"> Other<br>
+						Are you human? <input type="radio" name="humanQuestion" id="humanYes" value="Yes" required="required"> Yes <input type="radio" name="humanQuestion" id="humanNo" value="No"> No
+						<input type="radio" name="humanQuestion" id="humanMaybe" value="Maybe"> Maybe						
+					</p>
+					<p id="answer"></p>
+					<p id="comment"></p>
+					<br><br>
+					<button type="submit" class="center" style="line-height:35px; padding:0 20px; font-size:0.95em" onclick="checkInput(); checkIfHuman(); getDesserts()">Submit</button>
+					</form> 
+					</td>
+				</tr>
+			</table>
 			<br><br>
 		</div>
 		
-		<script>
-		/*
-			I used the built-in browser debugger to pinpoint small errors I made (like forgetting to add parenthesis in my if and if/else statements).  For most of the input fields, I used try/catch statements to prevent
-			the user from progessing.  It also displays an error message describing the source of the error and resets some text areas.  When a user selects the correct option or inputs the correct text, then clicks 
-			the submit button, they are allowed to proceed to the next step and no error messages should appear.
-		*/
-		
-			// Variables for input fields
-			var humanYes = document.getElementById('humanYes'), humanNo = document.getElementById('humanNo'), humanMaybe = document.getElementById('humanMaybe'), firstName = document.getElementById('firstName'),
-				lastName = document.getElementById('lastName'), emailAddress = document.getElementById('email'), phoneNumber = document.getElementById('phone'), proveHuman = document.getElementById('answer'),
-				textBox = document.getElementById('comment');
-			
-			
-			// Exception handling for blank input fields
-			function checkInput()
-			{
-				try
-				{
-					// If input field is left blank
-					if (firstName.value === "")
-					{
-						// Exception statement
-						throw "Please enter your first name.";
-					}
-					else if (lastName.value === "")
-					{
-						throw "Please enter your last name.";
-					} 
-					else if (emailAddress.value === "")
-					{
-						throw "Please enter your email address.";
-					} 
-					else if (phoneNumber.value === "")
-					{
-						throw "Please enter your phone number.";
-					} 
-					// If no check boxes are checked
-					else if (humanYes.checked === false && humanNo.checked === false && humanMaybe.checked === false)
-					{
-						throw "Please choose Yes, No, or Maybe.";
-					}
-				}
-				catch (error)
-				{
-					// Alert message that directs user to enter info in specified field
-					window.alert(error);
-					// Prevents user from proceeding until the error is corrected
-					return false;
-				}
-			}
-			
-			// Create input box element
-			var input = document.createElement("input");
-			// Set to accept text
-			input.setAttribute('type', 'text');
-			input.style.padding = "3px 5px";
-			// Default value
-			input.value = "Not Human";
-			
-			// Output message or continue form depending on user check box choice
-			function checkIfHuman()
-			{	
-				try
-				{
-					// If user checks Yes and all previous fields contain text
-					if (humanYes.checked && firstName.value !== "" && lastName.value !== "" && emailAddress.value !== "" && phoneNumber.value !== "")
-					{
-						// Display message asking user to input HUMAN to proceed
-						proveHuman.innerHTML = "Prove it.  Type 'HUMAN': ";
-						// Attach input box element next to text
-						proveHuman.append(input);
-						
-						// If user correctly inputs HUMAN
-						if (input.value == 'HUMAN')
-						{
-							// Create textarea element
-							var input2 = document.createElement("textarea");
-							// Set to accept text
-							input2.setAttribute('type', 'text');
-							input2.style.padding = "3px 5px";
-							input2.style.width = "26vw";
-							input2.style.height = "12vw";
-							
-							// Display message asking user to leave comments in the text box
-							textBox.innerHTML = "Please leave your comment here, and I will get back to you shortly. <br>";
-							// Attach text box element under newly displayed text
-							textBox.append(input2);
-						}
-					}
-					// If user checks No
-					else if (humanNo.checked && firstName.value !== "" && lastName.value !== "" && emailAddress.value !== "" && phoneNumber.value !== "")
-					{
-						// Display alert message
-						throw "Uh oh!";
-					}
-					// If user checks Maybe
-					else if (humanMaybe.checked && firstName.value !== "" && lastName.value !== "" && emailAddress.value !== "" && phoneNumber.value !== "")
-					{
-						// Display alert message
-						throw "Wrong answer.";
-					}
-				}
-				catch (error)
-				{
-					// Alert message that directs user to enter info in specified field
-					window.alert(error);
-					// Reset text fields
-					proveHuman.innerHTML = "";
-					textBox.innerHTML = "";
-					input.value = "Not Human";
-					
-					// Prevents user from proceeding until the error is corrected
-					return false;
-				}
-			}
-		</script>
+		<!-- Contact form functions for input validation -->
+		<script src="JavaScript/contact-func.js"></script>
 		
 		<footer>
 			&copy;2018 Jessica Churchill 
