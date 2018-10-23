@@ -169,7 +169,7 @@ function validateForm(event)
 	// When input fields haven't been answered correctly
 	if (readyCheck.checked)
 	{
-		// Prevent form from submitting
+		// Form is able to submit
 		formValidity = true;
 	}
 	// Reset value for revalidation
@@ -177,9 +177,12 @@ function validateForm(event)
 	{
 		formValidity = false;
 	}
-	// If form has all valid inputs, submit form
+	// If form has all valid inputs
 	if (formValidity === true)
 	{
+		// Display alert message
+		window.alert("Congrats, you've successfully completed the form!");
+		// Submit form
 		form.submit();
 	}
 }
