@@ -24,16 +24,23 @@ function getElapsedTime()
 	// If user doesn't enter anything in a field
 	else if (formDay === "" || formMonth === "" || formYear === "")
 	{
+		// Prevent calculations
 		result.innerHTML = "";
 	}
 	// If user enters a negative number in a field
-	else if (formDay < 0 || formMonth < 0 || formYear < 0)
+	else if (formDay <= 0 || formMonth <= 0 || formYear <= 0)
 	{
 		result.innerHTML = "";
 	}
-	// Subtract entered date from current date
+	// If an invalid date is entered
+	else if (formDay > 31 || formMonth > 12)
+	{
+		result.innerHTML = "";
+		window.alert("Please enter a valid date.");
+	}
 	else
 	{
+		// Subtract entered date from current date
 		days = currTime.getDate() - enteredDate.getDate();
 		months = currTime.getMonth() - enteredDate.getMonth();
 		years = currTime.getFullYear() - enteredDate.getFullYear();
