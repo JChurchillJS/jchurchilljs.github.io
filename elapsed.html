@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--
+            CIS166AA: Time Elapsed
+            Author: Jessica Churchill
+            Date: 11/02/2018
+        -->
+
+        <meta charset="utf-8" />
+        <title>Time Elapsed</title>
+        <link rel="stylesheet" href="style.css" />
+        <!-- Script for older browsers -->
+        <script src="JavaScript/modernizr.custom.05819.js"></script>
+    </head>
+
+    <body>
+        <img src="Images/banner.png" style="width:100%; height:13vw; box-shadow: 0 0 6px #000000" alt="Sweets Top Banner">
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="greece.html">Greece</a></li>
+                <li><a href="italy.html">Italy</a></li>
+                <li><a href="australia.html">Australia</a></li>
+                <li><a href="japan.html">Japan</a></li>
+                <li><a href="mexico.html">Mexico</a></li>
+                <li><a href="security.html">Web Security</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div id="main">
+            <h1>Time Elapsed</h1><br><br>
+
+            <table class="contactTable wrap" style="width:22.5%" onsubmit="event.preventDefault();">
+                <tr>
+                    <td>
+                    <form id="contact">
+
+                        Month: <input type="number" id="month" min="1" required="required"><br>
+                        Day: <input type="number" id="day" min="1" required="required"><br>
+                        Year: <input type="number" id="year" min="1" required="required"><br><br>
+                        Elapsed Time:
+
+                    <p style="text-align:center" id="elapsedTime"></p>
+
+                    <button type="submit" id="submit" class="center" style="line-height:35px; padding:0 20px; font-size:0.95em">Submit</button>
+                    </form>
+                    </td>
+                </tr>
+            </table>
+            <br><br><br><br>
+        </div>
+
+        <!-- Time/date functions to get elapsed time -->
+        <script src="JavaScript/time.js"></script>
+
+        <footer>
+            &copy;2018 Jessica Churchill
+        </footer>
+    </body>
+</html>

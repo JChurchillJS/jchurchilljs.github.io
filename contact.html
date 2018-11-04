@@ -4,19 +4,19 @@
 		<!--
 			CIS166AA: Contact Form
 			Author: Jessica Churchill
-			Date: 10/19/2018
+			Date: 11/02/2018
 		-->
-		
+
 		<meta charset="utf-8" />
 		<title>Contact Me</title>
 		<link rel="stylesheet" href="style.css" />
 		<!-- Script for older browsers -->
-		<script src="JavaScript/modernizr.custom.05819.js"></script>		
+		<script src="JavaScript/modernizr.custom.05819.js"></script>
 	</head>
-	
+
 	<body>
 		<img src="Images/banner.png" style="width:100%; height:13vw; box-shadow: 0 0 6px #000000" alt="Sweets Top Banner">
-		
+
 		<nav>
 			<ul>
 				<li><a href="index.html">Home</a></li>
@@ -29,10 +29,10 @@
 				<li><a href="contact.html">Contact</a></li>
 			</ul>
 		</nav>
-		
+
 		<div id="main">
 			<h1>Contact Me</h1><br>
-			
+
 			<table class="contactTable center" style="width:43%">
 				<tr>
 					<td>
@@ -40,29 +40,29 @@
 					<p>
 						Full Name: <input type="text" id="fullName" required="required" onchange="this.setCustomValidity('')"><br>
 						E-mail Address: <input type="email" id="email" required="required" onchange="this.setCustomValidity('')"><br>
-						Phone Number: <input type="number" id="phone" min="1000000000" placeholder="1234567890" required="required"><br>
+						Phone Number: <input type="tel" id="phone" placeholder="123-456-7890" required="required"><br>
 						Favorite Desserts:<br>
 						<input type="checkbox" name="desserts" value="pies"> Pies <input type="checkbox" name="desserts" value="cakes"> Cakes <input type="checkbox" name="desserts" value="donuts"> Donuts
 						<input type="checkbox" name="desserts" value="crepes"> Crepes <input type="checkbox" name="desserts" value="cookies"> Cookies <input type="checkbox" name="desserts" value="other desserts"> Other<br>
 						Are you human? <input type="radio" name="humanQuestion" id="humanYes" value="Yes" required="required"> Yes <input type="radio" name="humanQuestion" id="humanNo" value="No"> No
-						<input type="radio" name="humanQuestion" id="humanMaybe" value="Maybe"> Maybe						
+						<input type="radio" name="humanQuestion" id="humanMaybe" value="Maybe"> Maybe
 					</p>
 					<p id="answer"></p>
 					<p id="comment"></p>
 					<br><br>
-					<button type="submit" class="center" style="line-height:35px; padding:0 20px; font-size:0.95em" onclick="checkInput(); checkIfHuman(); getDesserts()">Submit</button>
-					</form> 
+					<button type="submit" class="center" style="line-height:35px; padding:0 20px; font-size:0.95em" onclick="checkInput(); checkIfHuman();">Submit</button>
+					</form>
 					</td>
 				</tr>
 			</table>
 			<br><br>
 		</div>
-		
+
 		<!-- Contact form functions for input validation -->
 		<script src="JavaScript/contact-func.js"></script>
-		
+
 		<footer>
-			&copy;2018 Jessica Churchill 
+			&copy;2018 Jessica Churchill
 		</footer>
-	</body>		
+	</body>
 </html>

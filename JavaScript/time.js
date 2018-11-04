@@ -86,3 +86,13 @@ function getElapsedTime()
 		result.innerHTML = years + " Years, " + months + " Months, " + days + " Days";
 	}
 }
+
+// Event listeners with compatibility for IE8 or previous versions
+if (document.getElementById("submit").addEventListener) 
+{
+	document.getElementById("submit").addEventListener("click", getElapsedTime, false);
+}
+else 
+{
+	document.getElementById("submit").attachEvent("onclick", getElapsedTime);
+}

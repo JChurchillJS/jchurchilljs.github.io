@@ -114,7 +114,7 @@ footer {
 	text-align: center;
 	position: fixed;
 	bottom: 0;
-	width: 100%;	
+	width: 100%;
 }
 
 table.recipeTable {
@@ -133,7 +133,7 @@ table.contactTable {
 	font-family: 'Source Sans Pro', verdana;
 }
 
-table.contactTable input[type=text], input[type=email], input[type=number], select, textarea {
+table.contactTable input[type=text], input[type=email], input[type=number], input[type=tel], select, textarea {
 	width: 100%;
     padding:3px 5px;
     border: 1px solid #adadad;
@@ -146,9 +146,9 @@ table.contactTable input[type=checkbox], input[type=radio] {
 }
 
 
-table.contactTable input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { 
-	-webkit-appearance: none; 
-	margin: 0; 
+table.contactTable input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }
 
 table.contactTable button {
