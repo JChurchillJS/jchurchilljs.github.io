@@ -4,9 +4,9 @@
 		<!--
 			CIS166AA: Australia
 			Author: Jessica Churchill
-			Date: 10/07/2018
+			Date: 11/07/2018
 		-->
-		
+
 		<meta charset="utf-8" />
 		<title>Australia</title>
 		<link rel="stylesheet" href="style.css" />
@@ -17,10 +17,10 @@
 		<!-- Increase ingredient amounts when serving size is increased  -->
 		<script src="JavaScript/ServingSize.js"></script>
 	</head>
-	
+
 	<body>
 		<img src="Images/banner.png" style="width:100%; height:13vw; box-shadow: 0 0 6px #000000" alt="Sweets Top Banner">
-		
+
 		<nav>
 			<ul>
 				<li><a href="index.html">Home</a></li>
@@ -33,26 +33,26 @@
 				<li><a href="contact.html">Contact</a></li>
 			</ul>
 		</nav>
-		
-		<div id="main">	
+
+		<div id="main">
 			<h1>Pavlova</h1>
 			<p class="wrap">
 				The elegant Pavlova Cake (or pie) consists of a base made of a meringue crust topped with whipped cream and fresh fruits such as kiwis, strawberries, etc.  In Australia, it is considered a fresh fruit pie
-				with a meringue crust.  No one knows who first created the famous dessert Pavlova.  But the name and the recipes first began appearing soon after Russian prima ballerina and choreographer, Anna Matveyevna 
-				Pavlova (1881-1931), began touring across America, Europe, and the UK in 1910.  In America, she danced at the Metropolitan Opera House in New York.  Anna Pavlova was one of the most celebrated and 
+				with a meringue crust.  No one knows who first created the famous dessert Pavlova.  But the name and the recipes first began appearing soon after Russian prima ballerina and choreographer, Anna Matveyevna
+				Pavlova (1881-1931), began touring across America, Europe, and the UK in 1910.  In America, she danced at the Metropolitan Opera House in New York.  Anna Pavlova was one of the most celebrated and
 				influential ballet dancers of her time.
 				<a href="https://whatscookingamerica.net/History/Cakes/Pavlova.htm">(Source)</a>
 			</p><br>
-			
+
 			<table style="width:75%" class="center recipeTable">
 				<tr>
 					<td>
 					<img src="Images/pavlova.jpg" style="width:22vw; height:16vw; border:1px solid black" class="center" alt="Pavlova">
 					<h3><a href="https://sallysbakingaddiction.com/2018/03/21/pavlova/">Pavlova</a></h3>
-					<p>Servings: <input type="text" id="servings" style="height:21px; text-align:center" size="1" value="8" onchange="increasePavlova()">
+					<p>Servings: <input type="number" min="1" id="servings" style="height:21px; text-align:center" size="1" value="8" onchange="increasePavlova()">
 					<button id="resetButton" onclick="resetServings()">Reset</button><br></p>
 					<p><u>Ingredients</u></p>
-					<ul>						
+					<ul>
 						<li><span id="eggs">4</span> large egg whites</li>
 						<li><span id="fineSugar">1</span> c superfine sugar</li>
 						<li><span id="vanilla">1</span> tsp pure vanilla extract</li>
@@ -68,15 +68,15 @@
 					</ul>
 					<p><u>Directions</u><br>
 						1. Preheat the oven to 350°F. Line a large baking sheet with parchment paper or a silicone baking mat. (Preliminary note: you will quickly reduce the oven to 200°F in step 4.)<br>
-						2. With a handheld mixer or a stand mixer fitted with a whisk attachment, beat the egg whites until soft peaks form, about 5 minutes. Add the sugar in 2 additions, beating for 30 seconds between, 
-						then continue beating on high speed until glossy stiff peaks form, about 2 more minutes. The peaks should be stiff enough that you can hold the whisk upright and the peaks won't move. 
+						2. With a handheld mixer or a stand mixer fitted with a whisk attachment, beat the egg whites until soft peaks form, about 5 minutes. Add the sugar in 2 additions, beating for 30 seconds between,
+						then continue beating on high speed until glossy stiff peaks form, about 2 more minutes. The peaks should be stiff enough that you can hold the whisk upright and the peaks won't move.
 						Add the vanilla extract and beat for 1 more minute. The peaks should still be very stiff. If not, keep on mixing on high speed. Using a rubber spatula, fold in the cream of tartar and cornstarch.<br>
-						3. Spread the pavlova mixture into an 8-9-inch circle (see note for mini size). You can make decorative peaks with the back of a large spoon if desired. Make sure the edges are 
+						3. Spread the pavlova mixture into an 8-9-inch circle (see note for mini size). You can make decorative peaks with the back of a large spoon if desired. Make sure the edges are
 						relatively tall and there is a nice dip in the center.<br>
-						4. Place pavlova in the oven. As soon as you close the oven door, reduce heat to 200°F. The pavlova will stay in the oven as it cools down to 200°F. Bake until the pavlova is firm and dry, 
+						4. Place pavlova in the oven. As soon as you close the oven door, reduce heat to 200°F. The pavlova will stay in the oven as it cools down to 200°F. Bake until the pavlova is firm and dry,
 						about 90 minutes total. Rotate the baking sheet if you notice some spots browning. Try to limit how many times you open the oven as the cool air will interrupt the baking.<br>
 						5. Turn the oven off and let the pavlova cool inside the oven. Once the pavlova is cool, you can store it covered tightly at room temperature for up to 2 days. Or serve right away.<br>
-						6. Make the whipped cream: Using a hand mixer or a stand mixer fitted with a whisk attachment, beat the heavy cream, granulated sugar, and vanilla extract on medium-high speed until soft peaks form, 
+						6. Make the whipped cream: Using a hand mixer or a stand mixer fitted with a whisk attachment, beat the heavy cream, granulated sugar, and vanilla extract on medium-high speed until soft peaks form,
 						about 3 minutes. You can use right away or cover and store in the refrigerator for a few days.<br>
 						7. Once cool, top the pavlova with whipped cream and assorted toppings. Slice and serve.
 					</p>
@@ -84,12 +84,12 @@
 				</tr>
 			</table><br><br>
 		</div>
-		
+
 		<script>
 			// Convert initial decimal to a fraction.
 			document.getElementById('tartar').innerHTML = toFraction(0.5);
 			document.getElementById('cream').innerHTML = toFraction(1.25);
-			
+
 			// Reset serving size and default ingredient measurements when Reset button is clicked.
 			function resetServings()
 			{
@@ -97,16 +97,16 @@
 				document.getElementById('eggs').innerHTML = 4;
 				document.getElementById('fineSugar').innerHTML = 1;
 				document.getElementById('vanilla').innerHTML = 1;
-				document.getElementById('tartar').innerHTML = toFraction(0.5);				
-				document.getElementById('cornstarch').innerHTML = 1;	
+				document.getElementById('tartar').innerHTML = toFraction(0.5);
+				document.getElementById('cornstarch').innerHTML = 1;
 				document.getElementById('cream').innerHTML = toFraction(1.25);
-				document.getElementById('sugar').innerHTML = 3;	
-				document.getElementById('vanillaTopping').innerHTML = 1;				
+				document.getElementById('sugar').innerHTML = 3;
+				document.getElementById('vanillaTopping').innerHTML = 1;
 			}
 		</script>
-		
+
 		<footer>
 			&copy;2018 Jessica Churchill
 		</footer>
-	</body>		
+	</body>
 </html>

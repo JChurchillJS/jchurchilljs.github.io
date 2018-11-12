@@ -4,9 +4,9 @@
 		<!--
 			CIS166AA: Greece
 			Author: Jessica Churchill
-			Date: 10/07/2018
+			Date: 11/07/2018
 		-->
-		
+
 		<meta charset="utf-8" />
 		<title>Greece</title>
 		<link rel="stylesheet" href="style.css" />
@@ -17,10 +17,10 @@
 		<!-- Increase ingredient amounts when serving size is increased  -->
 		<script src="JavaScript/ServingSize.js"></script>
 	</head>
-	
+
 	<body>
 		<img src="Images/banner.png" style="width:100%; height:13vw; box-shadow: 0 0 6px #000000" alt="Sweets Top Banner">
-		
+
 		<nav>
 			<ul>
 				<li><a href="index.html">Home</a></li>
@@ -33,22 +33,22 @@
 				<li><a href="contact.html">Contact</a></li>
 			</ul>
 		</nav>
-		
-		<div id="main">	
+
+		<div id="main">
 			<h1>Baklava</h1>
 			<p class="wrap">
-				Commonly regarded as a Greek specialty, baklava is available in a wide range of local variations throughout Greece, both mainland and islands. 
-				It is also widely found in Turkish and many Arabic and Middle Eastern cultures. Baklava is generally served on special occasions, in many areas during religious ceremonies. 
-				Thus, Christians serve baklava at Christmas and Easter, Muslims eat it during Ramadan, and Jews often enjoy it as a Rosh Hashannah and Purim treat.  
+				Commonly regarded as a Greek specialty, baklava is available in a wide range of local variations throughout Greece, both mainland and islands.
+				It is also widely found in Turkish and many Arabic and Middle Eastern cultures. Baklava is generally served on special occasions, in many areas during religious ceremonies.
+				Thus, Christians serve baklava at Christmas and Easter, Muslims eat it during Ramadan, and Jews often enjoy it as a Rosh Hashannah and Purim treat.
 				<a href="http://www.newworldencyclopedia.org/entry/Baklava">(Source)</a>
 			</p><br>
-			
+
 			<table style="width:75%" class="center recipeTable">
 				<tr>
 					<td>
 					<img src="Images/baklava.jpg" style="width:21vw; height:16vw; border:1px solid black" class="center" alt="Baklava">
 					<h3><a href="https://www.allrecipes.com/recipe/9454/greek-baklava/">Greek Baklava</a></h3>
-					<p>Servings: <input type="text" id="servings" style="height:21px; text-align:center" size="1" value="18" onchange="increaseBaklava()">
+					<p>Servings: <input type="number" min="1" id="servings" style="height:21px; text-align:center" size="1" value="18" onchange="increaseBaklava()">
 					<button id="resetButton" onclick="resetServings()">Reset</button><br></p>
 					<p><u>Ingredients</u></p>
 					<ul>
@@ -61,13 +61,13 @@
 						<li><span id="vanilla">1</span> tsp vanilla extract</li>
 						<li><span id="honey">0.5</span> c honey</li>
 					</ul>
-					
+
 					<p><u>Directions</u><br>
 						1. Preheat oven to 350 degrees F(175 degrees C). Butter the bottoms and sides of a 9x13 inch pan.<br>
-						2. Chop nuts and toss with cinnamon. Set aside. Unroll phyllo dough. Cut whole stack in half to fit pan. Cover phyllo with a dampened cloth to keep from drying out as you work.  Place two sheets of 
+						2. Chop nuts and toss with cinnamon. Set aside. Unroll phyllo dough. Cut whole stack in half to fit pan. Cover phyllo with a dampened cloth to keep from drying out as you work.  Place two sheets of
 						dough in pan, butter thoroughly. Repeat until you have 8 sheets layered. Sprinkle 2 - 3 tablespoons of nut mixture on top. Top with two sheets of dough, butter, nuts, layering as you go.
 						The top layer should be about 6 - 8 sheets deep.<br>
-						3. Using a sharp knife cut into diamond or square shapes all the way to the bottom of the pan. You may cut into 4 long rows the make diagonal cuts. Bake for about 50 minutes until baklava is golden 
+						3. Using a sharp knife cut into diamond or square shapes all the way to the bottom of the pan. You may cut into 4 long rows the make diagonal cuts. Bake for about 50 minutes until baklava is golden
 						and crisp.<br>
 						4. Make sauce while baklava is baking. Boil sugar and water until sugar is melted. Add vanilla and honey. Simmer for about 20 minutes.<br>
 						5. Remove baklava from oven and immediately spoon sauce over it. Let cool. Serve in cupcake papers. This freezes well. Leave it uncovered as it gets soggy if it is wrapped up.</p>
@@ -75,28 +75,28 @@
 				</tr>
 			</table><br><br>
 		</div>
-		
+
 		<script>
 			// Convert initial decimal to a fraction.
 			document.getElementById('honey').innerHTML = toFraction(0.5);
-			
+
 			// Reset serving size and default ingredient measurements when Reset button is clicked.
 			function resetServings()
 			{
 				document.getElementById('servings').value = 18;
 				document.getElementById('phyllo').innerHTML = 1;
-				document.getElementById('nuts').innerHTML = 1;	
-				document.getElementById('butter').innerHTML = 1;	
-				document.getElementById('cinnamon').innerHTML = 1;	
-				document.getElementById('water').innerHTML = 1;	
-				document.getElementById('sugar').innerHTML = 1;	
-				document.getElementById('vanilla').innerHTML = 1;	
-				document.getElementById('honey').innerHTML = toFraction(0.5);	
+				document.getElementById('nuts').innerHTML = 1;
+				document.getElementById('butter').innerHTML = 1;
+				document.getElementById('cinnamon').innerHTML = 1;
+				document.getElementById('water').innerHTML = 1;
+				document.getElementById('sugar').innerHTML = 1;
+				document.getElementById('vanilla').innerHTML = 1;
+				document.getElementById('honey').innerHTML = toFraction(0.5);
 			}
 		</script>
-		
+
 		<footer>
 			&copy;2018 Jessica Churchill
 		</footer>
-	</body>		
+	</body>
 </html>

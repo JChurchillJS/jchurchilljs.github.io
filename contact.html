@@ -4,7 +4,7 @@
 		<!--
 			CIS166AA: Contact Form
 			Author: Jessica Churchill
-			Date: 11/02/2018
+			Date: 11/06/2018
 		-->
 
 		<meta charset="utf-8" />
@@ -37,20 +37,24 @@
 				<tr>
 					<td>
 					<form id="contact" onsubmit="event.preventDefault();">
-					<p>
-						Full Name: <input type="text" id="fullName" required="required" onchange="this.setCustomValidity('')"><br>
-						E-mail Address: <input type="email" id="email" required="required" onchange="this.setCustomValidity('')"><br>
-						Phone Number: <input type="tel" id="phone" placeholder="123-456-7890" required="required"><br>
+						Full Name: <input type="text" id="fullName" required="required">
+						<p id="fnError"></p>
+						E-mail Address: <input type="text" id="email" placeholder="user@domain.com" required="required">
+						<p id="eaError"></p>
+						Phone Number: <input type="tel" id="phone" placeholder="123-456-7890" required="required">
+						<p id="pnError"></p>
 						Favorite Desserts:<br>
 						<input type="checkbox" name="desserts" value="pies"> Pies <input type="checkbox" name="desserts" value="cakes"> Cakes <input type="checkbox" name="desserts" value="donuts"> Donuts
 						<input type="checkbox" name="desserts" value="crepes"> Crepes <input type="checkbox" name="desserts" value="cookies"> Cookies <input type="checkbox" name="desserts" value="other desserts"> Other<br>
 						Are you human? <input type="radio" name="humanQuestion" id="humanYes" value="Yes" required="required"> Yes <input type="radio" name="humanQuestion" id="humanNo" value="No"> No
 						<input type="radio" name="humanQuestion" id="humanMaybe" value="Maybe"> Maybe
-					</p>
-					<p id="answer"></p>
-					<p id="comment"></p>
-					<br><br>
-					<button type="submit" class="center" style="line-height:35px; padding:0 20px; font-size:0.95em" onclick="checkInput(); checkIfHuman();">Submit</button>
+						<p id="hError"></p>
+
+						Comments:<br>
+						<textarea id="comments" style="width:100%; height:10vw"></textarea>
+						<p id="cError"></p><br>
+
+						<button type="submit" class="center" style="line-height:35px; padding:0 20px; font-size:0.95em">Submit</button>
 					</form>
 					</td>
 				</tr>

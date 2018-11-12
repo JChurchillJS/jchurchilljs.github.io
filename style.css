@@ -117,12 +117,27 @@ footer {
 	width: 100%;
 }
 
+form {
+    font-size: 1.2em;
+    font-family: 'Source Sans Pro', verdana;
+}
+
+form p {
+    margin-top: 0;
+    margin-bottom: 0;
+    min-height: 20px;
+}
+
 table.recipeTable {
     border: 1px solid black;
 }
 
 table.recipeTable th, td {
     padding: 15px;
+}
+
+table.recipeTable input[type=number] {
+    width:25px;
 }
 
 table.contactTable {
@@ -146,7 +161,7 @@ table.contactTable input[type=checkbox], input[type=radio] {
 }
 
 
-table.contactTable input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
 	-webkit-appearance: none;
 	margin: 0;
 }

@@ -4,9 +4,9 @@
 		<!--
 			CIS166AA: Italy
 			Author: Jessica Churchill
-			Date: 10/07/2018
+			Date: 11/07/2018
 		-->
-		
+
 		<meta charset="utf-8" />
 		<title>Italy</title>
 		<link rel="stylesheet" href="style.css" />
@@ -17,10 +17,10 @@
 		<!-- Increase ingredient amounts when serving size is increased  -->
 		<script src="JavaScript/ServingSize.js"></script>
 	</head>
-	
+
 	<body>
 		<img src="Images/banner.png" style="width:100%; height:13vw; box-shadow: 0 0 6px #000000" alt="Sweets Top Banner">
-		
+
 		<nav>
 			<ul>
 				<li><a href="index.html">Home</a></li>
@@ -33,21 +33,21 @@
 				<li><a href="contact.html">Contact</a></li>
 			</ul>
 		</nav>
-		
-		<div id="main">	
+
+		<div id="main">
 			<h1>Tiramisu</h1>
 			<p class="wrap">
 				The Italian translation for tiramisu is “carry me up.”  Also known as Tuscan Trifle.  Traditional tiramisu is a pudding-like dessert that usually consists of sponge cake or ladyfingers dipped in a liqueur,
 				then layered with grated chocolate and rich custard.  Tramisu was originally made as a loose custard.  It is only in recent years that using mascarpone cheese has come into fashion.
 				<a href="https://whatscookingamerica.net/History/Cakes/Tiramisu.htm">(Source)</a>
 			</p><br>
-			
+
 			<table style="width:75%" class="center recipeTable">
 				<tr>
 					<td>
 					<img src="Images/tiramisu.jpg" style="width:22vw; height:13vw; border:1px solid black" class="center" alt="Tiramisu">
 					<h3><a href="https://bakingamoment.com/classic-tiramisu-recipe/">Authentic Tiramisu</a></h3>
-					<p>Servings: <input type="text" id="servings" style="height:21px; text-align:center" size="1" value="12" onchange="increaseTiramisu()">
+					<p>Servings: <input type="number" min="1" id="servings" style="height:21px; text-align:center" size="1" value="12" onchange="increaseTiramisu()">
 					<button id="resetButton" onclick="resetServings()">Reset</button><br></p>
 					<p><u>Ingredients</u></p>
 					<ul>
@@ -77,31 +77,31 @@
 				</tr>
 			</table><br><br>
 		</div>
-		
+
 		<script>
 			// Convert initial decimal to a fraction.
 			document.getElementById('sugar').innerHTML = toFraction(0.5);
 			document.getElementById('wine').innerHTML = toFraction(0.33);
-			
+
 			// Reset serving size and default ingredient measurements when Reset button is clicked.
 			function resetServings()
 			{
 				document.getElementById('servings').value = 12;
 				document.getElementById('eggs').innerHTML = 4;
-				document.getElementById('sugar').innerHTML = toFraction(0.5);	
-				document.getElementById('wine').innerHTML = toFraction(0.33);	
-				document.getElementById('cheese').innerHTML = 16;	
-				document.getElementById('cream').innerHTML = 1;	
-				document.getElementById('espresso').innerHTML = 2;	
-				document.getElementById('liqueur').innerHTML = 3;	
-				document.getElementById('powderedSugar').innerHTML = 3;	
-				document.getElementById('ladyfingers').innerHTML = 48;	
-				document.getElementById('cocoa').innerHTML = 2;				
+				document.getElementById('sugar').innerHTML = toFraction(0.5);
+				document.getElementById('wine').innerHTML = toFraction(0.33);
+				document.getElementById('cheese').innerHTML = 16;
+				document.getElementById('cream').innerHTML = 1;
+				document.getElementById('espresso').innerHTML = 2;
+				document.getElementById('liqueur').innerHTML = 3;
+				document.getElementById('powderedSugar').innerHTML = 3;
+				document.getElementById('ladyfingers').innerHTML = 48;
+				document.getElementById('cocoa').innerHTML = 2;
 			}
 		</script>
-		
+
 		<footer>
 			&copy;2018 Jessica Churchill
 		</footer>
-	</body>		
+	</body>
 </html>

@@ -4,9 +4,9 @@
 		<!--
 			CIS166AA: Japan
 			Author: Jessica Churchill
-			Date: 10/07/2018
+			Date: 11/07/2018
 		-->
-		
+
 		<meta charset="utf-8" />
 		<title>Japan</title>
 		<link rel="stylesheet" href="style.css" />
@@ -17,10 +17,10 @@
 		<!-- Increase ingredient amounts when serving size is increased  -->
 		<script src="JavaScript/ServingSize.js"></script>
 	</head>
-	
+
 	<body>
 		<img src="Images/banner.png" style="width:100%; height:13vw; box-shadow: 0 0 6px #000000" alt="Sweets Top Banner">
-		
+
 		<nav>
 			<ul>
 				<li><a href="index.html">Home</a></li>
@@ -33,22 +33,20 @@
 				<li><a href="contact.html">Contact</a></li>
 			</ul>
 		</nav>
-		
-		<div id="main">	
+
+		<div id="main">
 			<h1>Daifuku Mochi</h1>
 			<p class="wrap">
-				Daifuku is one of Japan’s most popular confectionary varieties, and is enjoyed by people of all ages throughout the seasons. Its origins can be traced back to the early edo period and the famously 
-				filling harabuto-mochi, which was slightly larger in size than the daifuku we know today. The name ‘harabuto’ roughly translates to ‘fat belly’, and reflects the way in which it kept people full for a 
-				long time after eating – a characteristic still shared by modern daifuku. The main ingredients of daifuku are rice, azuki beans and sugar.
+				Daifuku is one of Japan’s most popular confectionary varieties, and is enjoyed by people of all ages throughout the seasons. Its origins can be traced back to the early edo period and the famously filling harabuto-mochi, which was slightly larger in size than the daifuku we know today. The name ‘harabuto’ roughly translates to ‘fat belly’, and reflects the way in which it kept people full for a long time after eating – a characteristic still shared by modern daifuku. The main ingredients of daifuku are rice, azuki beans and sugar.
 				<a href="http://www.zoomjapan.info/2017/07/17/history-of-daifuku/">(Source)</a>
 			</p><br>
-			
+
 			<table style="width:75%" class="center recipeTable">
 				<tr>
 					<td>
 					<img src="Images/daifuku.jpg" style="width:22vw; height:15.5vw; border:1px solid black" class="center" alt="Tiramisu">
 					<h3><a href="http://www.japanesecooking101.com/daifuku-mochi-recipe/">Daifuku Mochi</a></h3>
-					<p>Servings: <input type="text" id="servings" size="1" style="height:21px; text-align:center" value="8" onchange="increaseDaifuku()">
+					<p>Servings: <input type="number" min="1" id="servings" size="1" style="height:21px; text-align:center" value="8" onchange="increaseDaifuku()">
 					<button id="resetButton" onclick="resetServings()">Reset</button><br></p>
 					<p><u>Ingredients</u></p>
 					<ul>
@@ -68,14 +66,14 @@
 						1. Mix Mochiko and water in a glass (or other heat proof) bowl and mix well.<br>
 						2. Add some more water if it's too dry, 1 Tbsp at a time.<br>
 						3. Steam the Mochiko dough (leaving the dough in the bowl) in a steamer for 20 minutes.<br>
-						4. Transfer the steamed Mochi into a pot and cook at medium to medium low heat with 1/3 of the sugar. When the sugar is completely dissolved, add another 1/3 of the sugar and mix well. 
+						4. Transfer the steamed Mochi into a pot and cook at medium to medium low heat with 1/3 of the sugar. When the sugar is completely dissolved, add another 1/3 of the sugar and mix well.
 						Add the last part of the sugar and cook some more until the sugar is dissolved. Take the time to melt the sugar, but be careful not to burn it.<br>
 						5. Take the hot Mochi out from the pot onto a sheet pan liberally dusted with Katakuriko or cornstarch.<br>
 						6. Cut some Mochi out, and wrap the Mochi around a ball of Anko (size of a heaping tablespoon). Pinch the end of Mochi to seal. Serve it with the seam side down.<br>
-						
+
 						<br><u>Anko Directions</u><br>
 						1. Put red beans in a pot with 4-5 cups of water. Let boil for 5 minutes and discard water.<br>
-						2. In a clean pot, place red beans and 4-5 cups of water, cover, and let it simmer at low heat for 1 1/2 to 2 hours (add more water to keep above the beans). The beans should now be very soft, 
+						2. In a clean pot, place red beans and 4-5 cups of water, cover, and let it simmer at low heat for 1 1/2 to 2 hours (add more water to keep above the beans). The beans should now be very soft,
 						easily crushed between fingers.<br>
 						3. Discard water again, put soft beans back in the pot with sugar at medium high heat and constantly stir and mix about 10 minutes until forming a paste that looks shiny but still loose.
 						Immediately transfer the paste to a container.
@@ -83,29 +81,29 @@
 				</tr>
 			</table><br><br>
 		</div>
-		
+
 		<script>
 			// Convert initial decimal to a fraction.
 			document.getElementById('water').innerHTML = toFraction(0.75);
 			document.getElementById('sugar').innerHTML = toFraction(0.75);
 			document.getElementById('paste').innerHTML = toFraction(0.5);
 			document.getElementById('ankoSugar').innerHTML = toFraction(1.5);
-			
+
 			// Reset serving size and default ingredient measurements when Reset button is clicked.
 			function resetServings()
 			{
 				document.getElementById('servings').value = 8;
 				document.getElementById('flour').innerHTML = 1;
-				document.getElementById('water').innerHTML = toFraction(0.75);	
-				document.getElementById('sugar').innerHTML = toFraction(0.75);	
-				document.getElementById('paste').innerHTML = toFraction(0.5);	
-				document.getElementById('beans').innerHTML = 1;	
-				document.getElementById('ankoSugar').innerHTML = toFraction(1.5);			
+				document.getElementById('water').innerHTML = toFraction(0.75);
+				document.getElementById('sugar').innerHTML = toFraction(0.75);
+				document.getElementById('paste').innerHTML = toFraction(0.5);
+				document.getElementById('beans').innerHTML = 1;
+				document.getElementById('ankoSugar').innerHTML = toFraction(1.5);
 			}
 		</script>
-		
+
 		<footer>
 			&copy;2018 Jessica Churchill
 		</footer>
-	</body>		
+	</body>
 </html>
