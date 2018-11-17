@@ -4,19 +4,19 @@
 		<!--
 			CIS166AA: Web Security
 			Author: Jessica Churchill
-			Date: 10/07/2018
+			Date: 11/17/2018
 		-->
-		
+
 		<meta charset="utf-8" />
 		<title>Web Security</title>
 		<link rel="stylesheet" href="style.css" />
 		<!-- Script for older browsers -->
 		<script src="JavaScript/modernizr.custom.05819.js"></script>
 	</head>
-	
+
 	<body>
 		<img src="Images/banner.png" style="width:100%; height:13vw; box-shadow: 0 0 6px #000000" alt="Sweets Top Banner">
-		
+
 		<nav>
 			<ul>
 				<li><a href="index.html">Home</a></li>
@@ -29,10 +29,10 @@
 				<li><a href="contact.html">Contact</a></li>
 			</ul>
 		</nav>
-		
+
 		<div id="main">
 			<h1>Web Security</h1><br>
-			
+
 			<h2>Introduction</h2>
 			<p class="wrap">
 				The purpose of website security is to prevent attacks. The more formal definition of website security is the act/practice of protecting websites from unauthorized access,
@@ -40,47 +40,53 @@
 				your policies for creating and renewing passwords, and the client-side code.
 				<a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Website_security" target="_blank">(Source)</a><br><br>
 			</p>
-			
+
+			<h2>Your Location</h2>
+			<div id="map" class="wrap"></div>
+			<p style="font-size:1.4em; text-align:center" id="coords"></p><br>
+
+
+
 			<h2>Object Properties</h2><br>
 				<table style="width:75%" class="wrap propTable">
 					<tr>
 						<th>Property</th>
-						<th>Description</th> 
+						<th>Description</th>
 						<th style="width:25%">Example</th>
 					</tr>
 					<tr>
 						<td>appName</td>
-						<td>Name of the web browser displaying the page</td> 
+						<td>Name of the web browser displaying the page</td>
 						<td id="appName">Click Here</td>
 					</tr>
 					<tr>
 						<td>platform</td>
-						<td>Operating system in use on the client computer</td> 
+						<td>Operating system in use on the client computer</td>
 						<td id="platform">Click Here</td>
 					</tr>
 					<tr>
 						<td>userAgent</td>
-						<td>String stored in the HTTP user-agent request header, which contains information about the browser, the platform name, and compatibility</td> 
+						<td>String stored in the HTTP user-agent request header, which contains information about the browser, the platform name, and compatibility</td>
 						<td id="userAgent">Click Here</td>
 					</tr>
 					<tr>
 						<td>height</td>
-						<td>Height of the display screen</td> 
+						<td>Height of the display screen</td>
 						<td id="height">Click Here</td>
 					</tr>
 					<tr>
 						<td>availWidth</td>
-						<td>Width of the display screen, not including operating system features such as the Windows taskbar</td> 
+						<td>Width of the display screen, not including operating system features such as the Windows taskbar</td>
 						<td id="availWidth">Click Here</td>
 					</tr>
 					<tr>
 						<td>pixelDepth</td>
-						<td>Display screen's color resolution in bits per pixel</td> 
+						<td>Display screen's color resolution in bits per pixel</td>
 						<td id="pixelDepth">Click Here</td>
 					</tr>
 				</table>
-			<br><br>			
-			
+			<br><br>
+
 			<h2>Useful Links</h2>
 			<h3 class="left wrap"><a href="https://www.getsafeonline.org/" target="_blank">Get Safe Online</a></h3>
 			<p class="wrap">
@@ -95,28 +101,15 @@
 				This well-known university delivers ten useful tips on how to protect your computer from malware and other cybersecurity attacks.
 			</p><br><br><br>
 		</div>
-		
-		<script>
-			// Variables to replace "Click Here" with relevant information
-			var platformEx = document.getElementById('platform'), appNameEx = document.getElementById('appName'), agentEx = document.getElementById('userAgent'), heightEx = document.getElementById('height'),
-				availWidthEx = document.getElementById('availWidth'), pixelEx = document.getElementById('pixelDepth');
-			
-			// Replace text with name of the user's web browser on click
-			appNameEx.addEventListener("click", function(){appNameEx.textContent = navigator.appName;});
-			// Replace text with user's operating system
-			platformEx.addEventListener("click", function(){platformEx.textContent = navigator.platform;});
-			// Replace text with user's browser info, platform name, and compatibility
-			agentEx.addEventListener("click", function(){agentEx.textContent = navigator.userAgent;});
-			// Replace text with user's screen height
-			heightEx.addEventListener("click", function(){heightEx.textContent = screen.height + " px";});
-			// Replace text with user's screen width, not including OS features
-			availWidthEx.addEventListener("click", function(){availWidth.textContent = screen.availWidth + " px";});
-			// Replace text with user's screen color resolution
-			pixelEx.addEventListener("click", function(){pixelEx.textContent = screen.pixelDepth + " bpp";});
-		</script>
-		
+
+		<!-- Get map showing user's location -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnWEaT5OCCB9EBFoSsMdiPonsNePTFxT8"></script>
+
+		<!-- Security page functions -->
+		<script src="JavaScript/security.js"></script>
+
 		<footer>
-			&copy;2018 Jessica Churchill 
+			&copy;2018 Jessica Churchill
 		</footer>
-	</body>		
+	</body>
 </html>

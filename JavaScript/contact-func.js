@@ -1,7 +1,7 @@
 /*
 	CIS166AA: Contact Form Functions
 	Author: Jessica Churchill
-	Date: 11/06/2018
+	Date: 11/12/2018
 */
 
 // Variables for input fields
@@ -15,7 +15,7 @@ function validateName(name)
 	// Get value of input name
 	name = fullName.value;
 	// Only allow letters to be submitted
-    var regex = /^[a-zA-Z\s]+$/;
+    var regex = /^[a-zA-Z\s-']+$/;
 
     try
     {
@@ -23,7 +23,7 @@ function validateName(name)
 		if (regex.test(name) === false)
 		{
 			// Throw error
-			throw "Only letters are allowed.";
+			throw "Only letters, hyphens, and apostrophes are allowed.";
 		}
 		else
 		{
@@ -48,7 +48,7 @@ function validateEmail(email)
 	// Get user's email
 	email = emailAddress.value;
 	// Email format from text
-	// Letters, numbers, dots, hyphens, and underscores allowed @ domain name (letters, hypens, numbers) . domain (2-6 lowercase letters)
+	// Letters, numbers, dots, hyphens, and underscores allowed @ domain name (letters, hyphens, numbers) . domain (2-6 lowercase letters)
     var regex = /^[_a-zA-Z0-9-\.]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-z]{2,6})$/;
 
     try
@@ -122,7 +122,7 @@ function checkIfHuman()
 		// If user checks No
 		else if (humanNo.checked)
 		{
-			throw "Only humans may proceed beyond this point.";
+			throw "Only humans may contact me.";
 		}
 		// If user checks Maybe
 		else if (humanMaybe.checked)
@@ -291,7 +291,7 @@ function validateForm(event)
 	if (formValidity === true)
 	{
 		// Display alert message
-		window.alert("Congrats, you've successfully completed the form!");
+		window.alert("You've successfully completed the form.");
 		// Submit form
 		form.submit();
 	}
