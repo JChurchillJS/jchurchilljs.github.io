@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--
+            CIS166AA: Name Usage
+            Author: Jessica Churchill
+            Date: 11/24/2018
+        -->
+
+        <meta charset="utf-8" />
+        <title>International Sweets</title>
+        <link rel="stylesheet" href="style.css" />
+        <!-- Script for older browsers -->
+        <script src="JavaScript/modernizr.custom.05819.js"></script>
+    </head>
+
+    <body>
+        <img src="Images/banner.png" style="width:100%; height:13vw; box-shadow: 0 0 6px #000000" alt="Sweets Top Banner">
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="greece.html">Greece</a></li>
+                <li><a href="italy.html">Italy</a></li>
+                <li><a href="australia.html">Australia</a></li>
+                <li><a href="japan.html">Japan</a></li>
+                <li><a href="mexico.html">Mexico</a></li>
+                <li><a href="security.html">Web Security</a></li>
+                <li><a href="ajax.html">Name Usage</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+
+        <div id="main">
+            <h1>Name Usage</h1><br><br>
+
+            <p style="text-align:center; font-size: 1.6em">
+                Enter a name:<br>
+                <input type="text" id="nameId"><br><br>
+                <button type="button" onclick="loadDoc()">Submit</button>
+
+                <br><br>
+                <table class="wrap" style="width:14%; height:400px; font-family:'Source Sans Pro', verdana; font-size: 1.3em" id="nameInfo"></table>
+            </p>
+        </div>
+
+<script>
+    // Get value entered by user
+    var fName = document.getElementById('nameId');
+
+    // Load the XML page
+    function loadDoc()
+    {
+        // Create url containing entered name
+        var nameUrl = "https://www.behindthename.com/api/lookup.xml?name=" + fName.value +"&key=sh947211802";
+        // Create xmlhttprequest object
+        var xhttp = new XMLHttpRequest();
+
+        // When readyState changes, perform function
+        xhttp.onreadystatechange = function()
+        {
+            // ready 4 = request finished and ready, status 200 = OK
+            if (xhttp.readyState == 4 && xhttp.status == 200)
+            {
+                // Use function to get name details from page
+                getName(xhttp);
+            }
+        };
+        // Get details from url
+        xhttp.open("GET", nameUrl, true);
+        // Send request to server
+        xhttp.send();
+    }
+
+
+    function getName(xml)
+    {
+        // Get response data from xml page
+        var xmlDoc = xml.responseXML;
+        // Create object to replace table data
+        var table = "<tr><th>Name</th><th>Usage</th></tr>";
+        // Specify where in xml page to find name attributes
+        var detail = xmlDoc.getElementsByTagName("name_detail");
+
+        // For each element within specified tag
+        for (var i = 0; i < detail.length; i++)
+        {
+            // Add name and name usage elements to object
+            table += "<tr><td>" + detail[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "</td><td>" + detail[i].getElementsByTagName("usage_full")[0].childNodes[0].nodeValue + "</td></tr>";
+        }
+
+            // Replace text with object data containing name info
+            document.getElementById("nameInfo").innerHTML = table;
+    }
+</script>
+
+        <footer>
+            &copy;2018 Jessica Churchill
+        </footer>
+    </body>
+</html>

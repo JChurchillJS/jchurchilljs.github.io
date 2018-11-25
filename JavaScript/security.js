@@ -4,6 +4,7 @@
       Date: 11/17/2018
 */
 
+"use strict";
 
 // Variables to replace "Click Here" with relevant information
 var platformEx = document.getElementById('platform'), appNameEx = document.getElementById('appName'), agentEx = document.getElementById('userAgent'), heightEx = document.getElementById('height'),
