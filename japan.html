@@ -4,7 +4,7 @@
 		<!--
 			CIS166AA: Japan
 			Author: Jessica Churchill
-			Date: 11/07/2018
+			Date: 11/29/2018
 		-->
 
 		<meta charset="utf-8" />
@@ -12,10 +12,8 @@
 		<link rel="stylesheet" href="style.css" />
 		<!-- Script for older browsers -->
 		<script src="JavaScript/modernizr.custom.05819.js"></script>
-		<!-- Convert decimals to fractions -->
-		<script src="JavaScript/Fraction.js"></script>
-		<!-- Increase ingredient amounts when serving size is increased  -->
-		<script src="JavaScript/ServingSize.js"></script>
+		<!-- Link to jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	</head>
 
 	<body>
@@ -47,10 +45,10 @@
 					<td>
 					<img src="Images/daifuku.jpg" style="width:22vw; height:15.5vw; border:1px solid black" class="center" alt="Tiramisu">
 					<h3><a href="http://www.japanesecooking101.com/daifuku-mochi-recipe/">Daifuku Mochi</a></h3>
-					<p>Servings: <input type="number" min="1" id="servings" size="1" style="height:21px; text-align:center" value="8" onchange="increaseDaifuku()">
+					<p>Servings: <input type="number" min="1" id="servings" size="1" style="height:21px; text-align:center" value="8">
 					<button id="resetButton" onclick="resetServings()">Reset</button><br></p>
 					<p><u>Ingredients</u></p>
-					<ul>
+					<ul class="ingredient">
 						<li><span id="flour">1</span> c Mochiko (sweet rice flour)</li>
 						<li><span id="water">0.75</span> c water</li>
 						<li><span id="sugar">0.75</span> c sugar</li>
@@ -58,7 +56,7 @@
 						<li><span id="paste">0.5</span> Anko recipe</li>
 					</ul>
 						<p><u>Anko (Sweet Red Bean Paste) Recipe</u></p>
-					<ul>
+					<ul class="ingredient">
 						<li><span id="beans">1</span> c red beans</li>
 						<li><span id="ankoSugar">1.5</span> c sugar</li>
 						<li>water</li>
@@ -83,23 +81,28 @@
 			</table><br><br>
 		</div>
 
+		<!-- Increase ingredient amounts when serving size is increased  -->
+		<script src="JavaScript/ServingSize.js"></script>
+		<!-- Convert decimals to fractions -->
+		<script src="JavaScript/Fraction.js"></script>
+
 		<script>
 			// Convert initial decimal to a fraction.
-			document.getElementById('water').innerHTML = toFraction(0.75);
-			document.getElementById('sugar').innerHTML = toFraction(0.75);
-			document.getElementById('paste').innerHTML = toFraction(0.5);
-			document.getElementById('ankoSugar').innerHTML = toFraction(1.5);
+			// document.getElementById('water').innerHTML = toFraction(0.75);
+			// document.getElementById('sugar').innerHTML = toFraction(0.75);
+			// document.getElementById('paste').innerHTML = toFraction(0.5);
+			// document.getElementById('ankoSugar').innerHTML = toFraction(1.5);
 
 			// Reset serving size and default ingredient measurements when Reset button is clicked.
 			function resetServings()
 			{
 				document.getElementById('servings').value = 8;
 				document.getElementById('flour').innerHTML = 1;
-				document.getElementById('water').innerHTML = toFraction(0.75);
-				document.getElementById('sugar').innerHTML = toFraction(0.75);
-				document.getElementById('paste').innerHTML = toFraction(0.5);
+				document.getElementById('water').innerHTML = 0.75;
+				document.getElementById('sugar').innerHTML = 0.75;
+				document.getElementById('paste').innerHTML = 0.5;
 				document.getElementById('beans').innerHTML = 1;
-				document.getElementById('ankoSugar').innerHTML = toFraction(1.5);
+				document.getElementById('ankoSugar').innerHTML = 1.5;
 			}
 		</script>
 

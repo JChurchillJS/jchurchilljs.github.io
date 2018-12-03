@@ -4,7 +4,7 @@
 		<!--
 			CIS166AA: Mexico
 			Author: Jessica Churchill
-			Date: 11/07/2018
+			Date: 11/29/2018
 		-->
 
 		<meta charset="utf-8" />
@@ -12,10 +12,8 @@
 		<link rel="stylesheet" href="style.css" />
 		<!-- Script for older browsers -->
 		<script src="JavaScript/modernizr.custom.05819.js"></script>
-		<!-- Convert decimals to fractions -->
-		<script src="JavaScript/Fraction.js"></script>
-		<!-- Increase ingredient amounts when serving size is increased  -->
-		<script src="JavaScript/ServingSize.js"></script>
+		<!-- Link to jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	</head>
 
 		<body>
@@ -49,10 +47,10 @@
 					<td>
 					<img src="Images/flan.jpg" style="width:22vw; height:12.5vw; border:1px solid black" class="center" alt="Flan">
 					<h3><a href="https://www.geniuskitchen.com/recipe/mexican-flan-baked-caramel-custard-12354">Mexican Flan (Baked Caramel Custard)</a></h3>
-					<p>Servings: <input type="number" min="1" id="servings" style="height:21px; text-align:center" value="10" onchange="increaseFlan()">
+					<p>Servings: <input type="number" min="1" id="servings" style="height:21px; text-align:center" value="10">
 					<button id="resetButton" onclick="resetServings()">Reset</button><br></p>
 					<p><u>Ingredients</u></p>
-					<ul>
+					<ul class="ingredient">
 						<li><span id="sugar">1</span> c sugar</li>
 						<li><span id="eggs">6</span> eggs</li>
 						<li><span id="milk">3</span> c milk</li>
@@ -78,9 +76,14 @@
 			</table><br><br>
 		</div>
 
+		<!-- Increase ingredient amounts when serving size is increased  -->
+		<script src="JavaScript/ServingSize.js"></script>
+		<!-- Convert decimals to fractions -->
+		<script src="JavaScript/Fraction.js"></script>
+
 		<script>
 			// Convert initial decimal to a fraction.
-			document.getElementById('vanilla').innerHTML = toFraction(1.5);
+			// document.getElementById('vanilla').innerHTML = toFraction(1.5);
 
 			// Reset serving size and default ingredient measurements when Reset button is clicked.
 			function resetServings()
@@ -89,7 +92,7 @@
 				document.getElementById('sugar').innerHTML = 1;
 				document.getElementById('eggs').innerHTML = 6;
 				document.getElementById('milk').innerHTML = 3;
-				document.getElementById('vanilla').innerHTML = toFraction(1.5);
+				document.getElementById('vanilla').innerHTML = 1.5;
 				document.getElementById('orange').innerHTML = 1;
 			}
 		</script>

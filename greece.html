@@ -4,7 +4,7 @@
 		<!--
 			CIS166AA: Greece
 			Author: Jessica Churchill
-			Date: 11/07/2018
+			Date: 11/29/2018
 		-->
 
 		<meta charset="utf-8" />
@@ -12,10 +12,8 @@
 		<link rel="stylesheet" href="style.css" />
 		<!-- Script for older browsers -->
 		<script src="JavaScript/modernizr.custom.05819.js"></script>
-		<!-- Convert decimals to fractions -->
-		<script src="JavaScript/Fraction.js"></script>
-		<!-- Increase ingredient amounts when serving size is increased  -->
-		<script src="JavaScript/ServingSize.js"></script>
+		<!-- Link to jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	</head>
 
 	<body>
@@ -49,10 +47,10 @@
 					<td>
 					<img src="Images/baklava.jpg" style="width:21vw; height:16vw; border:1px solid black" class="center" alt="Baklava">
 					<h3><a href="https://www.allrecipes.com/recipe/9454/greek-baklava/">Greek Baklava</a></h3>
-					<p>Servings: <input type="number" min="1" id="servings" style="height:21px; text-align:center" size="1" value="18" onchange="increaseBaklava()">
+					<p>Servings: <input type="number" min="1" id="servings" style="height:21px; text-align:center" size="1" value="18">
 					<button id="resetButton" onclick="resetServings()">Reset</button><br></p>
 					<p><u>Ingredients</u></p>
-					<ul>
+					<ul class="ingredient">
 						<li><span id="phyllo">1</span> (16 oz) package phyllo dough</li>
 						<li><span id="nuts">1</span> lb chopped nuts</li>
 						<li><span id="butter">1</span> c butter</li>
@@ -77,9 +75,14 @@
 			</table><br><br>
 		</div>
 
+		<!-- Increase ingredient amounts when serving size is increased  -->
+		<script src="JavaScript/ServingSize.js"></script>
+		<!-- Convert decimals to fractions -->
+		<script src="JavaScript/Fraction.js"></script>
+
 		<script>
 			// Convert initial decimal to a fraction.
-			document.getElementById('honey').innerHTML = toFraction(0.5);
+			// document.getElementById('honey').innerHTML = toFraction(0.5);
 
 			// Reset serving size and default ingredient measurements when Reset button is clicked.
 			function resetServings()
@@ -92,7 +95,7 @@
 				document.getElementById('water').innerHTML = 1;
 				document.getElementById('sugar').innerHTML = 1;
 				document.getElementById('vanilla').innerHTML = 1;
-				document.getElementById('honey').innerHTML = toFraction(0.5);
+				document.getElementById('honey').innerHTML = 0.5;
 			}
 		</script>
 

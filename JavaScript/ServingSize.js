@@ -1,11 +1,93 @@
 /*
 	CIS166AA: Serving Size JavaScript
 	Author: Jessica Churchill
-	Date: 09/18/2018
+	Date: 11/29/18
 */
 
+// jQuery version of all functions
+
+// Initial serving size of recipe
+var initServing = parseFloat($('#servings').val());
+
+// When the input changes
+$(document).change(function()
+{
+	// For each child element of the ingredient list (only numbers)
+	$('ul.ingredient li').children('span').each(function()
+	{
+		// Get numerical value of child element
+        var value = parseFloat($(this).text());
+
+        // Get value of new serving size
+        var input = parseFloat($('#servings').val());
+        // Calculate new values for ingredients
+        var newValue = value * input / initServing;
+
+
+        // Fraction function from fraction.js
+        // Holds the integer portion of the number.
+        var integer = Math.floor(newValue);
+		// Holds the decimal portion of the number.
+		var decimal = newValue % 1;
+		// Fraction variables
+		var half = "1/2", oneThird = "1/3", twoThird = "2/3", oneFourth = "1/4", threeFourth = "3/4";
+
+		// If the decimal is higher than an amount, and lower than another amount, the rounded fraction is assigned.
+		if (decimal < 0.15)
+		{
+			// Make the amount into a whole number by removing decimal completely.
+			decimal = "";
+		}
+		else if (decimal >= 0.15 && decimal < 0.3)
+		{
+			// Decimal becomes 1/4
+			decimal = oneFourth;
+		}
+		else if (decimal >= 0.3 && decimal < 0.44)
+		{
+			// Decimal becomes 1/3
+			decimal = oneThird;
+		}
+		else if (decimal >= 0.44 && decimal < 0.56)
+		{
+			// Decimal becomes 1/2
+			decimal = half;
+		}
+		else if (decimal >= 0.56 && decimal < 0.69)
+		{
+			// Decimal becomes 2/3
+			decimal = twoThird;
+		}
+		else if (decimal >= 0.69 && decimal < 0.85)
+		{
+			// Decimal becomes 3/4
+			decimal = threeFourth;
+		}
+		else
+		{
+			// Remove decimal and add 1 to the integer.
+			decimal = "";
+			integer += 1;
+		}
+
+		if (integer == 0)
+		{
+			// Remove the integer portion if it equals 0, leaving only the decimal (fraction).
+			integer = "";
+		}
+
+
+        // Replace text with the new value
+        $(this).html(integer + " " + decimal);
+	});
+});
+
+
+
+// Old functions
+
 // Initialize serving size
-var input = 0;
+/*var input = 0;
 
 // Function to increase Baklava measurements when the user opts to increase the serving size of the baklava recipe.
 function increaseBaklava()
@@ -132,4 +214,4 @@ function increaseFlan()
 		document.getElementById('vanilla').innerHTML = toFraction(input * vanilla / base);
 		document.getElementById('orange').innerHTML = toFraction(input * orange / base);
 	}
-}
+}*/
